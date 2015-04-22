@@ -7,6 +7,7 @@
 		<title>TEDxUHasselt</title>
 		<link rel="stylesheet" type="text/css" href="/NothingToSeeHere/CodeIgniter-3.0.0/assets/css/Navigation/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="/NothingToSeeHere/CodeIgniter-3.0.0/assets/css/Navigation/menu.css">
+		<link rel="icon" type="image/png" href="/NothingToSeeHere/CodeIgniter-3.0.0/assets/imgs/Navigation/favicon-32x32.png">
 
 		<script type="text/javascript" src="/NothingToSeeHere/CodeIgniter-3.0.0/assets/js/Navigation/jquery.js"></script>
 		<script type="text/javascript" src="/NothingToSeeHere/CodeIgniter-3.0.0/assets/js/Navigation/function.js"></script>
@@ -56,7 +57,7 @@
 								<a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html">About</a>
 								<ul class="sub-menu">
 									<li>
-										<a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html">About TEDxUHASSELT</a>
+										<a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html">TEDxUHASSELT</a>
 									</li>
 									<li>
 										<a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html">Our Team</a>
