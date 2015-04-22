@@ -2,12 +2,25 @@
 
 body {
 	background-color: #eee;
-	background-image: url(../images/patterns/light_toast.png);
+	background-image: url(/NothingToSeeHere/CodeIgniter-3.0.0/assets/imgs/Navigation/light_toast.png);
 	color: #666;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
 	margin:0px;
 	padding:0px;
+}
+
+#header{
+	
+	background-color: #eee;
+	font-size:22px;
+	text-align:center;
+	color:#333;
+	font-weight:bold;
+	height:100px;
+    padding-top:50px;
+	
+	
 }
 
 a {
@@ -80,7 +93,7 @@ ol, ul {
 }
 
 #main-menu > li.parent {
-	background-image: url(../images/plus-gray.png);
+	background-image: url(/NothingToSeeHere/CodeIgniter-3.0.0/assets/imgs/Navigation/plus-gray.png);
 	background-size: 7px 7px;
 	background-repeat: no-repeat;
 	background-position: left center;
@@ -92,7 +105,7 @@ ol, ul {
 
 #main-menu > li > a {
 	color: #eee;
-	font-size: 14px;
+	font-size: 18px;
 	line-height: 14px;
 	padding: 30px 0;
 	text-decoration:none;
@@ -131,7 +144,7 @@ ul.sub-menu > li > a {
 	border-top: none;
 	color: #bbb;
 	display: block;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 15px;
 	padding: 10px 12px;
 }
@@ -154,7 +167,7 @@ ul.sub-menu > li:last-child > a {
 }
 
 ul.sub-menu > li > a.parent {
-	background-image: url(../images/arrow.png);
+	background-image: url(/NothingToSeeHere/CodeIgniter-3.0.0/assets/imgs/Navigation/arrow.png);
 	background-size: 5px 9px;
 	background-repeat: no-repeat;
 	background-position: 95% center;
