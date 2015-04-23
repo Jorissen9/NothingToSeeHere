@@ -37,6 +37,7 @@ class Home extends CI_Controller {
 	{
 		$this->load->view('header_view');
 		$this->load->view('navigation_view');
+		$this->load->view('content_view');
 		
 	   if($this->session->userdata('logged_in'))
 	   {

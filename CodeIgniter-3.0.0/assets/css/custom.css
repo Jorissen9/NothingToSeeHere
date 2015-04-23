@@ -2,6 +2,13 @@
  * All your custom CSS should go into this file
  */
 
+*{
+	margin:0px;
+	padding:0px;
+}
+
+
 body {
    padding-top: 15px;
 }
+
