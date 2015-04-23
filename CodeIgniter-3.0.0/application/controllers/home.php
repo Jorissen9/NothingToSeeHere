@@ -35,7 +35,8 @@ class Home extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view('Navigation_View');
+		$this->load->view('header_view');
+		$this->load->view('navigation_view');
 		
 	   if($this->session->userdata('logged_in'))
 	   {
@@ -46,8 +47,8 @@ class Home extends CI_Controller {
 	   else
 	   {
 	     //If no session, redirect to login page
-	     redirect('http://localhost:6969/NothingToSeeHere/CodeIgniter-3.0.0/index.php/login','auto');
-		 //$this->load->view('Userpanel_LoggedOut_View.php');
+	     //redirect('http://localhost:6969/NothingToSeeHere/CodeIgniter-3.0.0/index.php/login','auto');
+		 $this->load->view('userpanel_loggedOut_view.php');
 		 //$this->load->view('Navigation_View');
 	   }
 	}

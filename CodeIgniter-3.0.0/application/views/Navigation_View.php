@@ -1,19 +1,3 @@
-<!DOCTYPE html>
-<html class="csstransforms no-csstransforms3d csstransitions">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<title>TEDxUHasselt</title>
-		<link rel="stylesheet" type="text/css" href="/NothingToSeeHere/CodeIgniter-3.0.0/assets/css/Navigation/font-awesome.css">
-		<link rel="stylesheet" type="text/css" href="/NothingToSeeHere/CodeIgniter-3.0.0/assets/css/Navigation/menu.css">
-		<link rel="icon" type="image/png" href="/NothingToSeeHere/CodeIgniter-3.0.0/assets/imgs/Navigation/favicon-32x32.png">
-
-		<script type="text/javascript" src="/NothingToSeeHere/CodeIgniter-3.0.0/assets/js/Navigation/jquery.js"></script>
-		<script type="text/javascript" src="/NothingToSeeHere/CodeIgniter-3.0.0/assets/js/Navigation/function.js"></script>
-
-	</head>
-	<body>
 
 		<div id="wrap">
 			<header>
@@ -79,5 +63,3 @@
 				</div>
 			</header>
 		</div>
-	</body>
-</html>
