@@ -1,4 +1,5 @@
 <div class="col-xs-6">
+	<div class="col-md-11 pull-right">
     <br/>
     
     <h2>Welcome to TEDxUHasselt </h2>
@@ -7,4 +8,5 @@
     </p>
     <br/>
         <h1> Nieuws </h1>
+    </div>
 </div>
