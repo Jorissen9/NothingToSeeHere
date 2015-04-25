@@ -6,7 +6,7 @@
 					<a id="menu-toggle" class="button dark" href="#"><i class="icon-reorder"></i></a>
 					<nav id="navigation">
 						<ul id="main-menu">
-							<li class="<?php echo($this->uri->segment(1) == 'home' || $this->uri->segment(1) == '') ? 'active' : ''; ?>">
+							<li class="<?php echo($this->uri->segment(1) == 'home' || $this->uri->segment(1) == '') ? 'current-menu-item' : ''; ?>">
 								<a href="<?php echo base_url('home'); ?>" title="Home">Home</a>
 							</li>
 							<li class="parent">
@@ -54,7 +54,7 @@
 									</li>
 								</ul>
 							</li>
-							<li class="<?php echo($this->uri->segment(4) == 'contact') ? 'active' : ''; ?>">
+							<li class="<?php echo($this->uri->segment(1) == 'contact') ? 'current-menu-item' : ''; ?>">
 								<a href="<?php echo base_url('contact')?>" title="contact">Contact</a>
 							</li>
 						</ul>
