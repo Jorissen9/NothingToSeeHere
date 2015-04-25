@@ -13,6 +13,7 @@
 				</form>
 			</div>
 			<a class="col-md-12 form-control btn" href="<?php echo site_url('login') ?>">Login</a>
+			<div class="col-md-12" style="height: 5px"></div>
 			<a class="col-md-12 form-control btn" href="">Register</a>
 		</div>
 	</div>

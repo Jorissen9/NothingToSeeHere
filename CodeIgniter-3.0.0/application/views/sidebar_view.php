@@ -34,7 +34,7 @@
 						fjs.parentNode.insertBefore(js, fjs);
 					}(document, 'script', 'facebook-jssdk'));
 			</script>
-			<div class="col-md-12 fb-page" data-href="https://www.facebook.com/tedxuhasselt" data-height="300" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
+			<div class="fb-page" data-href="https://www.facebook.com/tedxuhasselt" data-height="300" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
 				<div class="fb-xfbml-parse-ignore">
 					<blockquote cite="https://www.facebook.com/tedxuhasselt">
 						<a href="https://www.facebook.com/tedxuhasselt">TEDxUHasselt</a>
