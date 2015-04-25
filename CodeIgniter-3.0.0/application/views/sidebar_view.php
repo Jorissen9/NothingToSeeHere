@@ -4,7 +4,7 @@
         <div class="col-md-6 panel-body pull-right">
         	<h3 class="panel-title pull-left">Follow us on Twitter</h3>
         	<div class="col-md-12" style="height: 15px"></div>
-			<a class="twitter-timeline" href="https://twitter.com/TEDxUHasselt" width="300" height="400" data-widget-id="591563457335586816">Tweets door @TEDxUHasselt</a>
+			<a class="twitter-timeline" href="https://twitter.com/TEDxUHasselt" width="300" height="310" data-widget-id="591563457335586816">Tweets door @TEDxUHasselt</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         </div>
     </div>
