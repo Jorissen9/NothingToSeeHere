@@ -1,7 +1,8 @@
-<div class="col-sm-6">
-	<div class="col-md-1 pull-right"></div>
-	<div class="col-md-4 pull-right">
-		<div id="login" style="display: none">
+<div class="col-sm-6 pull-right"> 	
+	
+    <div class="col-md-10 pull-right">
+        <div class="col-md-6 panel-body pull-right">
+			<div id="login" style="display: none">
 			<h1>Log in</h1>
 			<form>
 				<input type="email" placeholder="Email" />
@@ -11,8 +12,8 @@
 				</div>
 			</form>
 		</div>
-		<a class="pull-right form-control btn" href="<?php echo site_url('login/index') ?>">Login</a>
-		<a class="pull-right form-control btn" href="">Register</a>
-	</div>
-
+		<a class="col-md-12 form-control btn" href="<?php echo site_url('login/index') ?>">Login</a>
+		<a class="col-md-12 form-control btn" href="">Register</a>
+		</div>
+    </div>
 </div>
