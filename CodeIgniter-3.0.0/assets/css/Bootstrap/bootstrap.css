@@ -2549,8 +2549,8 @@ output {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #555;
-  background-color: #fff;
+  color: #FFFFFF;
+  background-color: #333333;
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -3020,7 +3020,7 @@ select[multiple].form-group-lg .form-control {
 .btn:hover,
 .btn:focus,
 .btn.focus {
-  color: #333;
+  color: #FF2B06;
   text-decoration: none;
 }
 .btn:active,
