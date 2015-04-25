@@ -32,7 +32,6 @@ class Home extends CI_Controller {
 		$this->load->view('header_view');
 		$this->load->view('navigation_view');
 		$this->load->view('content_view');
-		$this->load->view('sidebar_view');
 		
 	   if($this->session->userdata('logged_in'))
 	   {
@@ -47,6 +46,7 @@ class Home extends CI_Controller {
 		 $this->load->view('userpanel_loggedout_view.php');
 		 //$this->load->view('Navigation_View');
 	   }
+		$this->load->view('sidebar_view');
 	}
 	
 	 function logout()
