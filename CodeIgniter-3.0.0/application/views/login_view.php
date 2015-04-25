@@ -1,31 +1,29 @@
-<div class="container">
-	<div class="row">
-		<div class="col-sm-6 col-md-4 col-md-offset-4">
-			<h1 class="text-center login-title">Sign in to continue</h1>
-			<div class="account-wall">
-				<div class="col-md-12">
-					<img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt="">
-				</div>
-				<div class="col-sm-12">
-					<form class="form-signin" action="<?php echo site_url('verifylogin/index') ?>">
-						<div class="col-md-4">
-							<input type="text" class="form-control" placeholder="Email" required autofocus>
-						</div>
-						<div class="col-md-4">
-							<input type="password" class="form-control" placeholder="Password" required>
-						</div>
-						<div class="col-md-4">
-							<button class="btn btn-lg btn-primary btn-block" type="submit">
-								Sign in
-							</button>
-							<label class="checkbox pull-left">
-								<input type="checkbox" value="remember-me">
-								Remember me </label>
-						</div>
-					</form>
-				</div>
-			</div>
-			<a href="#" class="text-center new-account">Create an account </a>
-		</div>
-	</div>
+<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h1 class="text-center">Login</h1>
+      </div>
+      <div class="modal-body">
+          <form class="form col-md-12 center-block">
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control input-lg" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary btn-lg btn-block">Sign In</button>
+              <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Need help?</a></span>
+            </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+          <div class="col-md-12">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+		  </div>	
+      </div>
+  </div>
+  </div>
 </div>

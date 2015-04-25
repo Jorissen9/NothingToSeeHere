@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Contact extends CI_Controller {
+class Contact extends MY_Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -10,9 +10,6 @@ class Contact extends CI_Controller {
 
 
 	function index() {
-		
-		$this -> load -> view('header_view');
-		$this -> load -> view('navigation_view');
 		
 		//set validation rules
 		$this -> form_validation -> set_rules('name', 'Name', 'trim|required|xss_clean|callback_alpha_space_only');

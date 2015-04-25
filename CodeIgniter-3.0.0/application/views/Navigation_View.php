@@ -6,8 +6,8 @@
 					<a id="menu-toggle" class="button dark" href="#"><i class="icon-reorder"></i></a>
 					<nav id="navigation">
 						<ul id="main-menu">
-							<li class="current-menu-item">
-								<a href="<?php echo site_url('home') ?>">Home</a>
+							<li class="<?php echo($this->uri->segment(1) == 'home' || $this->uri->segment(1) == '') ? 'active' : ''; ?>">
+								<a href="<?php echo base_url('home'); ?>" title="Home">Home</a>
 							</li>
 							<li class="parent">
 								<a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html">News</a>
@@ -54,8 +54,8 @@
 									</li>
 								</ul>
 							</li>
-							<li>
-								<a href="<?php echo base_url('contact')?>">Contact</a>
+							<li class="<?php echo($this->uri->segment(4) == 'contact') ? 'active' : ''; ?>">
+								<a href="<?php echo base_url('contact')?>" title="contact">Contact</a>
 							</li>
 						</ul>
 					</nav>
