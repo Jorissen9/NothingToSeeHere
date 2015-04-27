@@ -22,7 +22,26 @@
 
 		<script type="text/javascript" src="<?php echo base_url('assets/css/Navigation/assets/js/jquery.js')?>"></script>
 		<script type="text/javascript" src="<?php echo base_url('assets/js/Navigation/function.js')?>"></script>
-
+		<script type="text/javascript" >
+			function showLoginForm() {
+				showLoginButtons();
+				document.getElementById('login').style.display = 'block';
+				document.getElementById('loginShow').style.display = 'none';
+			}
+			function showRegisterForm() {
+				showLoginButtons();
+				document.getElementById('register').style.display = 'block';
+				document.getElementById('registerShow').style.display = 'none';
+				document.getElementById('loginSpace').style.display = 'none';
+			}
+			function showLoginButtons() {
+				document.getElementById('register').style.display = 'none';
+				document.getElementById('login').style.display = 'none';
+				document.getElementById('loginSpace').style.display = '';
+				document.getElementById('loginShow').style.display = 'block';
+				document.getElementById('registerShow').style.display = 'block';
+			}
+		</script>
 	</head>
 	<body></body>
 </html>
