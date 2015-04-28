@@ -9,6 +9,10 @@ body {
 	padding:0px;
 }
 
+.head{
+	background-color: #333333;
+}
+
 .fbpicture{
 	margin-top:20px;
 	margin-bottom: 20px;
@@ -64,8 +68,8 @@ ol, ul {
 	display: inline-block;
 	font-size: 0;
 	padding-top:15px;
+	padding-bottom:30px;
 	position:relative;
-	margin-left:-270px;
 }
 #navigation {
 	position: absolute;
@@ -128,7 +132,6 @@ ol, ul {
 ul.sub-menu { /* level 2 */
 	display: none;
 	left: 0px;
-	top: 38px;
 	padding-top: 10px;
 	position: absolute;
 	width: 150px;
