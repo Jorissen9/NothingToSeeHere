@@ -79,10 +79,15 @@ ol, ul {
 }
 
 /* HEADER > MENU */
+
 #main-menu {
 	float: right;
 	font-size: 0;
 	margin: 10px 0;
+}
+
+.login-menu{
+	padding-left:100px;
 }
 
 #main-menu > li {

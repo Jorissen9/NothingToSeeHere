@@ -14,5 +14,11 @@ $(document).ready(function() {
 			$('#main-menu').removeAttr('style');
 		}
 	});
+	
+	/* LOGIN MENU */
+	
+	$('.dropdown-menu').find('form').click(function (e) {
+        e.stopPropagation();
+    });
 
 });

@@ -20,7 +20,8 @@
 
 		<link rel="icon" type="image/png" href="<?php echo base_url('assets/imgs/favicon-32x32.png') ?>">
 
-		<script type="text/javascript" src="<?php echo base_url('assets/css/Navigation/assets/js/jquery.js')?>"></script>
+		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery-2.1.3.js')?>"></script>
+		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.js')?>"></script>
 		<script type="text/javascript" src="<?php echo base_url('assets/js/Navigation/function.js')?>"></script>
 		<script type="text/javascript" >
 			function showLoginForm() {
