@@ -23,6 +23,11 @@ a {
 	text-decoration: none;
 }
 
+#error-message{
+	color:red;
+}
+
+
 hr{
 	border-style: solid;
 	border-width: 1px;
@@ -71,6 +76,8 @@ ol, ul {
 	padding-bottom:30px;
 	position:relative;
 }
+
+
 #navigation {
 	position: absolute;
 	right: 40px;
@@ -90,9 +97,7 @@ ol, ul {
 	margin: 10px 0;
 }
 
-.login-menu{
-	padding-left:100px;
-}
+
 
 #main-menu > li {
 	display: inline-block;

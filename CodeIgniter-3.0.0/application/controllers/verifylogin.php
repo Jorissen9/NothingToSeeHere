@@ -8,8 +8,6 @@ class Verifylogin extends CI_Controller {
 
 	function index() {
 		//This method will have the credentials validation
-		$this -> load -> library('form_validation');
-		
 		
 		$this->load->helper('security');
 		$this->load->helper('form');
@@ -19,12 +17,15 @@ class Verifylogin extends CI_Controller {
 
 		if ($this -> form_validation -> run() == FALSE) {
 			//Field validation failed.  User redirected to login page
-			$this -> load -> view('login_view');
+			//redirect('home','auto');
+			echo json_encode(array('st'=>0,'msg' => validation_errors()));
+			
 		} else {
 			//Go to private area
-			redirect('http://localhost:6969/NothingToSeeHere/CodeIgniter-3.0.0/index.php/home', 'refresh');
+		
+			redirect('home', 'refresh');
 		}
-
+		redirect('home', 'refresh');
 	}
 
 	function check_database($password) {

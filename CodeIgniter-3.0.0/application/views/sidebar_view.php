@@ -1,4 +1,4 @@
-<div class="col-sm-6 pull-right">
+<div class="col-sm-6 pull-right" style="margin-top:100px;">
 
 	<div class="col-md-10 pull-right">
 		<div class="col-md-6 panel-body pull-right">

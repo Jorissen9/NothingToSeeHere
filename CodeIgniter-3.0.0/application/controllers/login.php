@@ -11,7 +11,6 @@
 		function index() {
 			$this->load->view('header_view');
 			$this->load->view('navigation_view');
-			$this -> load -> view('login_view');
 		}
 	
 	}
