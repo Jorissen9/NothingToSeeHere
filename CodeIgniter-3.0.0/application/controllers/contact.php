@@ -6,6 +6,7 @@ class Contact extends MY_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this -> load -> library(array('session', 'form_validation', 'email'));
+
 	}
 
 
