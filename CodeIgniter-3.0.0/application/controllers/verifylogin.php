@@ -22,10 +22,10 @@ class Verifylogin extends CI_Controller {
 			
 		} else {
 			//Go to private area
-		
-			redirect('home', 'refresh');
+			echo json_encode(array('st'=>1,'msg' => "logged in successful"));
+			//redirect('home', 'refresh');
 		}
-		redirect('home', 'refresh');
+		
 	}
 
 	function check_database($password) {

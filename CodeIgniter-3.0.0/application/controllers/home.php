@@ -15,7 +15,8 @@ class Home extends MY_Controller {
 		if ($this -> session -> userdata('logged_in')) {
 			$session_data = $this -> session -> userdata('logged_in');
 			$data['username'] = $session_data['username'];
-			$this -> load -> view('home_view', $data);
+			$data['loggedIn'] = TRUE;
+			$this -> load -> view('navigation_view', $data);
 		} else {
 
 			//If no session, redirect to login page
