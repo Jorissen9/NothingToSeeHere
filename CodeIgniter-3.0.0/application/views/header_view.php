@@ -9,6 +9,8 @@
 		<meta name="author" content="Kenny Vanrusselt, Bjorn Jorissen, Remco Van Gestel, Sören Veestraeten">
 
 		<title>TEDxUHasselt</title>
+		
+		<link rel="icon" type="image/png" href="<?php echo base_url('assets/imgs/favicon-32x32.png') ?>">
 
 		<!-- Bootstrap: http://getbootstrap.com/ -->
 		<link href="<?php echo base_url('assets/css/Bootstrap/bootstrap.css') ?>" rel="stylesheet">
@@ -16,15 +18,14 @@
 		<link href="<?php echo base_url('assets/css/font-awesome.css') ?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/css/custom.css') ?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/css/Navigation/font-awesome.css') ?>" rel="stylesheet">
-		<link href="<?php echo base_url('assets/css/Navigation/menu.css') ?>" rel="stylesheet">
-
-		<link rel="icon" type="image/png" href="<?php echo base_url('assets/imgs/favicon-32x32.png') ?>">
 
 		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery-2.1.3.js')?>"></script>
-		<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.js')?>"></script>
+		<!-- <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.js')?>"></script>-->
 		<script type="text/javascript" src="<?php echo base_url('assets/js/Navigation/function.js')?>"></script>
 		<script type="text/javascript" src="<?php echo base_url('assets/js/Bootstrap/bootstrap.js')?>"></script>
+		<script type="text/javascript" src="<?php echo base_url('assets/js/Bootstrap/bootstrap-select.js')?>"></script>
 		<script type="text/javascript" src="<?php echo base_url('assets/js/Bootstrap/npm.js')?>"></script>
+		
 	</head>
 	<body></body>
 </html>

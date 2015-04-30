@@ -11,7 +11,7 @@ class Home extends MY_Controller {
 	public function index() {
 	
 		$this -> load -> view('sidebar_view');
-		$this -> load -> view('content_view');
+		$this -> load -> view('home_view');
 	}
 
 	function logout() {

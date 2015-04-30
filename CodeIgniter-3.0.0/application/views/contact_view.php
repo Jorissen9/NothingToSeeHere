@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3 well">
+        <div class="col-md-8 col-md-offset-2 ">
             <?php $attributes = array("class" => "form-horizontal", "name" => "contactform");
             echo form_open("contact/index", $attributes);?>
             <fieldset>
-            <legend>Contact Form</legend>
+            <h2>Contact Form</h2>
             <div class="form-group">
                 <div class="col-md-12">
                     <label for="name" class="control-label">Name</label>
@@ -47,7 +47,7 @@
 
             <div class="form-group">
                 <div class="col-md-12">
-                    <input name="submit" type="submit" class="btn btn-primary" value="Send" />
+                    <input name="submit" type="submit" class="btn" value="Send" />
                 </div>
             </div>
             </fieldset>

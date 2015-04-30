@@ -5,6 +5,7 @@ class Signup extends MY_Controller {
 
 	public function __construct() {
 		parent::__construct();
+		$this -> load -> model('signup_model', '', TRUE);
 
 	}
 
@@ -22,55 +23,54 @@ class Signup extends MY_Controller {
         //Store the captcha HTML for correct MVC pattern use.
         $data['recaptcha_html'] = $this->recaptcha->recaptcha_get_html();
 
-        $this->form_validation->set_rules('voornaam', 'Naam', 'trim|required|min_length[2]|xss_clean');
-        $this->form_validation->set_rules('achternaam', 'Achternaam', 'trim|required|min_length[2]|xss_clean');
-        $this->form_validation->set_rules('gebruikersnaam', 'Gebruikersnaam', 'trim|required|min_length[4]|xss_clean');
-        $this->form_validation->set_rules('password', 'Wachtwoord', 'trim|required|min_length[4]|max_length[32]');
-        $this->form_validation->set_rules('passconf', 'Bevestiging Wachtwoord', 'trim|required|matches[password]');
+        $this->form_validation->set_rules('firstname', 'First Name', 'trim|required|min_length[2]|xss_clean');
+        $this->form_validation->set_rules('lastname', 'Last Name', 'trim|required|min_length[2]|xss_clean');
+        $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[4]|xss_clean');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]|max_length[32]');
+        $this->form_validation->set_rules('passconf', 'Confirm Password', 'trim|required|matches[password]');
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-        $this->form_validation->set_rules('dob', 'Geboortedatum', 'callback_date_check');
+        $this->form_validation->set_rules('dob', 'Birthdate', 'callback_date_check');
         $_POST['dob'] = $this->input->post('dob_year') . '-' . $this->input->post('dob_month') . '-' . $this->input->post('dob_day');
 
         //$this->load->view('include/view_containerStart');
         //$this->load->view('view_login');
         //$this->load->view('ho');
 
-        //$this->recaptcha->recaptcha_check_answer();
+        $this->recaptcha->recaptcha_check_answer();
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('signup_view', $data);
         } else {
-            if (2!=0/*!$this->recaptcha->getIsValid()*/) {
+            if (/*2!=0*/ !$this->recaptcha->getIsValid()) {
                 $this->session->set_flashdata('error', 'Incorrect captcha');
                 $this->load->view('signup_view', $data);
                 header('location: signup/');
             } else {
-                $postdata = array('email_address' => $this->input->post('email'), 'member_name' => $this->input->post('gebruikersnaam'));
-                $email_address = $this->model_hexion->check_existing_email($postdata['email_address']);
-                $member_name = $this->model_hexion->check_existing_membername($postdata['member_name']);
-                if (count($member_name) > 0 || count($email_address) > 0 ) {
-                    $this->session->set_flashdata('error', 'Deze gebruikersnaam of Email is al in gebruik.');
+                $postdata = array('email' => $this->input->post('email'), 'username' => $this->input->post('username'));
+                $email = $this->signup_model->check_existing_email($postdata['email']);
+                $username = $this->signup_model->check_existing_username($postdata['username']);
+                if (count($username) > 0 || count($email) > 0 ) {
+                    $this->session->set_flashdata('error', 'Username or E-mail already in use. ;(');
                     $this->load->view('signup_view', $data);
                     header('location: signup/');
                 } else {
-                    $this->session->set_flashdata('success', 'Registratie is gelukt!');
+                    $this->session->set_flashdata('success', 'Registration Complete!');
                     $this->load->view('signup_view', $data);
                     header('location: signup/');
-                    $displayname = $this->input->post('voornaam') . " " . $this->input->post('achternaam');
-                    $nieuwlid = array(
-                        'member_name' => $this->input->post('gebruikersnaam'),
-                        'real_name' => $displayname,
-                        'email_address' => $this->input->post('email'),
-                        'avatar' => 'hexion_avatar.jpg',
-                        'passwd' => md5($this->input->post('password')),
+                    $member = array(
+                        'username' => $this->input->post('username'),
+                        'firstname' => $this->input->post('firstname'),
+                        'lastname' =>$this->input->post('lastname'),
+                        'email' => $this->input->post('email'),
+                        'password' => md5($this->input->post('password')),
                         'birthdate' => $this->input->post('dob')
                     );
-                    $this->model_hexion->registreer($nieuwlid);
+                    $this->signup_model->register($member);
                 }
             }
         }
 	}
 
-    public function date_check() {
+	public function date_check() {
         // Check als er een correcte datum ingevoerd is in ons registretie form
         if (checkdate($this->input->post('dob_month'), $this->input->post('dob_day'), $this->input->post('dob_year'))) {
             return TRUE;
@@ -79,5 +79,6 @@ class Signup extends MY_Controller {
             return FALSE;
         }
     }
+
 }
 
