@@ -23,8 +23,8 @@ a {
 	text-decoration: none;
 }
 
-#error-message{
-	color:red;
+a:hover{
+	color:#000;
 }
 
 
@@ -34,9 +34,7 @@ hr{
 	border-color: #2a2a2a;
 }
 
-a:hover {
-	color: #000;
-}
+
 ol, ul {
 	list-style: none;
 	padding:0px;
@@ -261,4 +259,10 @@ ul.sub-menu > li > a.parent {
 	ul.sub-menu > li > a.parent {
 		background: #333 !important;
 	}
+}
+
+/* Login form */
+
+#error-message{
+	color:red;
 }

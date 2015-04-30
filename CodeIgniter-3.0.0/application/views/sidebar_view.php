@@ -1,13 +1,27 @@
-<div class="col-sm-6 pull-right" style="margin-top:100px;">
-
+<div class="col-sm-6 pull-right" style="margin-top:15px;">
+	<div class="col-md-10 pull-right">
+		<div class="col-md-6 panel-body pull-right" style="margin-bottom: 50px;">
+			<div class="col-md-12" style="height: 15px;"></div>
+			<form class="navbar-form col-md-12" role="search">
+				<div class="form-group">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search" id="inputGroup" style="width:260px;"/>
+						<span class="input-group-addon"> <i class="glyphicon glyphicon-search"></i> </span>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 	<div class="col-md-10 pull-right">
 		<div class="col-md-6 panel-body pull-right">
 			<h3 class="panel-title pull-left">Follow us on Twitter</h3>
-			<div class="col-md-12" style="height: 15px"></div>
+			<div class="col-md-12" style="height: 15px;"></div>
 			<a class="col-md-12 twitter-timeline" href="https://twitter.com/TEDxUHasselt" height="310" data-widget-id="591563457335586816">Tweets door @TEDxUHasselt</a>
 			<script>
 				! function(d, s, id) {
-					var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+					var js,
+					    fjs = d.getElementsByTagName(s)[0],
+					    p = /^http:/.test(d.location) ? 'http' : 'https';
 					if (!d.getElementById(id)) {
 						js = d.createElement(s);
 						js.id = id;
@@ -22,10 +36,11 @@
 	<div class="col-md-10 pull-right">
 		<div class="col-md-6 panel-body pull-right">
 			<h3 class="panel-title pull-left">Follow us on Facebook</h3>
-			<div class="col-md-12" style="height: 15px"></div>
+			<div class="col-md-12" style="height: 15px;"></div>
 			<script>
 				( function(d, s, id) {
-						var js, fjs = d.getElementsByTagName(s)[0];
+						var js,
+						    fjs = d.getElementsByTagName(s)[0];
 						if (d.getElementById(id))
 							return;
 						js = d.createElement(s);

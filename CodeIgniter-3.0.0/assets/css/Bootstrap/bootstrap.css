@@ -267,9 +267,10 @@ th {
 @font-face {
   font-family: 'Glyphicons Halflings';
 
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
+  src: url('../../font/Bootstrap/glyphicons-halflings-regular.eot');
+  src: url('../../font/Bootstrap/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../font/Bootstrap/glyphicons-halflings-regular.woff2') format('woff2'), url('../../font/Bootstrap/glyphicons-halflings-regular.woff') format('woff'), url('../../font/Bootstrap/glyphicons-halflings-regular.ttf') format('truetype'), url('../../font/Bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+ }
+ 
 .glyphicon {
   position: relative;
   top: 1px;
@@ -2988,7 +2989,7 @@ select[multiple].form-group-lg .form-control {
   }
 }
 .btn {
-  color: #FFFFFF;
+  color: #eee;
   background-color: #333333;
   display: inline-block;
   padding: 6px 12px;
@@ -3044,7 +3045,7 @@ fieldset[disabled] .btn {
   opacity: .65;
 }
 .btn-default {
-  color: #333;
+  color: #999;
   background-color: #fff;
   border-color: #ccc;
 }

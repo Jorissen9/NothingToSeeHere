@@ -4,23 +4,23 @@
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
                 <?php echo form_open('signup'); ?>
-                  <h2>Register</h2>  
+                  <h2 style="margin-bottom:25px;">Register</h2>  
                 <?php echo validation_errors('<p class="alert alert-dismissable alert-danger"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'); ?> </p>
                 <?php
-					if ($this -> session -> flashdata('error') !== FALSE) {
-						echo "<p class=\"alert alert-dismissable alert-danger\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>";
-						echo $this -> session -> flashdata('error');
-						echo "</p>";
-					}
+				if ($this -> session -> flashdata('error') != FALSE) {
+					echo "<p class=\"alert alert-dismissable alert-danger\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>";
+					echo $this -> session -> flashdata('error');
+					echo "</p>";
+				}
  ?>
                 <?php
-					if ($this -> session -> flashdata('success') !== FALSE) {
-						echo "<p class=\"alert alert-dismissable alert-success\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>";
-						echo $this -> session -> flashdata('success');
-						echo "</p>";
-					}
+				if ($this -> session -> flashdata('success') != FALSE) {
+					echo "<p class=\"alert alert-dismissable alert-success\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>";
+					echo $this -> session -> flashdata('success');
+					echo "</p>";
+				}
                 ?>
-            <div class="row">
+            <div class="row" style="margin-top:25px;">
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group">
                             <input value="<?php echo set_value('firstname'); ?>" type="text" name="firstname" id="firstname" class="form-control input-lg" placeholder="First Name" tabindex="1" required>
@@ -53,24 +53,21 @@
                 </div>
                 <p>
                     <?php $this -> load -> helper('dob'); ?>
-                    
-                    <div>
-                    	<label style="font-size: 16pt;">Birthdate: </label><br/>
-                    	<select class="selectpicker" name="dob_day"><option value="0">Day:</option><?php echo generate_options(1, 31) ?></select>
-                    	<select class="selectpicker" name="dob_month"><option value="0">Month:</option><?php echo generate_options(1, 12) ?></select>
-                    	<select class="selectpicker" name="dob_year"><option value="0">Year:</option><?php echo generate_options(1900, date("Y")) ?></select>
-                    </div>
-
-                </p>
-                <p>
-                <?php echo $recaptcha_html; ?><br/>
-                <div class="row">
-                    <div class="col-xs-6 col-md-6 pull-right">
-                        <input type="submit" class="btn btn-green btn-block btn-lg" value="Sign Up" />
-                        <br/>
-                    </div>
-                    <?php echo form_close(); ?>
-                </div>
+                    <div style="margin-top:20px;">
+	                    <h4><label>Birthdate: </label><br/></h4>
+	                    <select class="selectpicker" name="dob_day"><option value="0">Day:</option><?php echo generate_options(1, 31) ?></select>
+	                    <select class="selectpicker" name="dob_month"><option value="0">Month:</option><?php echo generate_options(1, 12) ?></select>
+	                    <select class="selectpicker" name="dob_year"><option value="0">Year:</option><?php echo generate_options(1900, date("Y")) ?></select>
+               		</div>
+                </p> 
+	            <div style="margin-top:50px; margin-left:60px;"><?php echo $recaptcha_html; ?></div>
+	            <div class="row">
+	                <div class="col-xs-6 col-md-6 pull-left" style="margin-top:50px;">
+	                   <input type="submit" class="btn btn-block btn-lg" value="Sign Up" />
+	                   <br/>
+	                </div>
+	                <?php echo form_close(); ?>
+	            </div>
             </div>
         </div>
     </div>
