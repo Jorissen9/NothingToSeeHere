@@ -5,42 +5,26 @@
 		<br/>
 		<h3> Latest News: </h3>
 		<?php
-		$page_id = 'TEDxUHasselt';
-		$access_token = '384545391746432|kMtO9DQn412t0WTd6MfLo3fsKkI';
-		$fbid = "TEDxUHasselt";
-		$limit = 5;
+
 		$posts = "";
-		
-		//Get the JSON
-		$json_object = @file_get_contents('https://graph.facebook.com/' . $page_id . '/feed?limit=' . $limit . '&access_token=' . $access_token);
+		foreach ($fbdata -> data as $post) {
 
-		//Interpret data
-		$fbdata = json_decode($json_object);
+			$fbTime = strtotime($post -> created_time);
+			$myTime = date("d M Y h:ia", $fbTime);
 
-		foreach ($fbdata->data as $post) {
-			        
-		 $fbTime = strtotime($post->created_time);
-         $myTime= date("d M Y h:ia",$fbTime);
-		 		
-			if(isset($post-> message))
-			{
-				$posts .= '<h5><p style="line-height:60px;">Posted on: ' . $myTime. '</h5>';
+			if (isset($post -> message)) {
+				$posts .= '<h5><p style="line-height:60px;">Posted on: ' . $myTime . '</h5>';
 				$posts .= '<h4><a href="' . $post -> link . '">' . $post -> message . '</a></p>';
-				
-				if(isset($post-> description))
-				{
+
+				if (isset($post -> description)) {
 					$posts .= '<p style="line-height:60px;"><img src="' . $post -> picture . '" class="fbpicture" style="width:470px; height:246px;" /></p>';
 					$posts .= '<p>' . $post -> description . '</p>';
-				
+
 				}
-			}
-			else
-			continue;
+			} else
+				continue;
 
-
-			
-			$posts .= '</h4><br/><hr />';	
-			
+			$posts .= '</h4><br/><hr />';
 
 		}
 

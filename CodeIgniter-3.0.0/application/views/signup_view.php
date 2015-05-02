@@ -60,7 +60,7 @@
 	                    <select class="selectpicker" name="dob_year"><option value="0">Year:</option><?php echo generate_options(1900, date("Y")) ?></select>
                		</div>
                 </p> 
-	            <div style="margin-top:50px; margin-left:60px;"><?php echo $recaptcha_html; ?></div>
+                <div style="margin-top:50px; margin-left:75px;" class="g-recaptcha" data-sitekey="6LdeNgYTAAAAAKWAtvDEN73z9ybf1nbjfcSdaqfr"></div>
 	            <div class="row">
 	                <div class="col-xs-6 col-md-6 pull-left" style="margin-top:50px;">
 	                   <input type="submit" class="btn btn-block btn-lg" value="Sign Up" />
