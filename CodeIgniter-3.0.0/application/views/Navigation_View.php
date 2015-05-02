@@ -9,8 +9,8 @@
 			<li class="col-lg-1">
 				<a href="#">Events</a>
 			</li>
-			<li class="col-lg-1">
-				<a href="#">Forums</a>
+			<li class="col-lg-1 <?php echo($this -> uri -> segment(1) == 'forum') ? 'current-menu-item' : ''; ?>">
+				<a href="<?php echo base_url('forum')?>" title="forum">Forums</a>
 			</li>
 			<li class="col-lg-1 parent">
 				<a href="#">About</a>
