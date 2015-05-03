@@ -1,15 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends MY_Controller {
+class Forum extends MY_Controller {
 
 	public function __construct() {
 		parent::__construct();
 
 	}
 
-	public function index() {
+    function index() {
+
 		$this -> load -> view('forum_view');
+		
+		
 	}
+	
 
 }
