@@ -16,7 +16,7 @@
 		<div class="col-md-6 panel-body pull-right">
 			<h3 class="panel-title pull-left">Follow us on Twitter</h3>
 			<div class="col-md-12" style="height: 15px;"></div>
-			<a class="col-md-12 twitter-timeline" href="https://twitter.com/tedx" height="310" data-widget-id="591563457335586816">Tweets door @TEDxPXL</a>
+			<a class="col-md-12 twitter-timeline" href="https://twitter.com/tedx" height="310" data-widget-id="595952552681807872">Tweets door @TEDxPXL</a>
 			<script>
 				! function(d, s, id) {
 					var js,
