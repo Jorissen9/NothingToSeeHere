@@ -16,7 +16,7 @@
 		<div class="col-md-6 panel-body pull-right">
 			<h3 class="panel-title pull-left">Follow us on Twitter</h3>
 			<div class="col-md-12" style="height: 15px;"></div>
-			<a class="col-md-12 twitter-timeline" href="https://twitter.com/TEDxUHasselt" height="310" data-widget-id="591563457335586816">Tweets door @TEDxUHasselt</a>
+			<a class="col-md-12 twitter-timeline" href="https://twitter.com/tedx" height="310" data-widget-id="591563457335586816">Tweets door @TEDxPXL</a>
 			<script>
 				! function(d, s, id) {
 					var js,
@@ -49,10 +49,10 @@
 						fjs.parentNode.insertBefore(js, fjs);
 					}(document, 'script', 'facebook-jssdk'));
 			</script>
-			<div class="fb-page" data-href="https://www.facebook.com/tedxuhasselt" data-height="300" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
+			<div class="fb-page" data-href="https://www.facebook.com/TEDxEvents" data-height="300" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
 				<div class="fb-xfbml-parse-ignore">
-					<blockquote cite="https://www.facebook.com/tedxuhasselt">
-						<a href="https://www.facebook.com/tedxuhasselt">TEDxUHasselt</a>
+					<blockquote cite="https://www.facebook.com/TEDxEvents">
+						<a href="https://www.facebook.com/TEDxEvents">TEDxPXL</a>
 					</blockquote>
 				</div>
 			</div>

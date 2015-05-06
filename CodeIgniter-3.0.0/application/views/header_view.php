@@ -4,11 +4,11 @@
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<meta name="description" content="TEDxUHasselt">
-		<meta name="keywords" content="TEDxUHasselt TEDx UHasselt Universiteit Hasselt ">
+		<meta name="description" content="TEDxPXL">
+		<meta name="keywords" content="TEDxPXL TEDx PXL">
 		<meta name="author" content="Kenny Vanrusselt, Bjorn Jorissen, Remco Van Gestel, Sören Veestraeten">
 
-		<title>TEDxUHasselt</title>
+		<title>TEDxPXL</title>
 
 		<link rel="icon" type="image/png" href="<?php echo base_url('assets/imgs/favicon-32x32.png') ?>">
 

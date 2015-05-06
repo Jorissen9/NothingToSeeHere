@@ -1,7 +1,7 @@
 <div class="col-xs-6">
 	<div class="col-md-9 pull-right">
 		<br/>
-		<h2>Welcome to TEDxUHasselt </h2>
+		<h2>Welcome to TEDxPXL</h2>
 		<br/>
 		<h3> Latest News: </h3>
 		<?php
