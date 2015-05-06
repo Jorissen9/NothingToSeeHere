@@ -1,5 +1,5 @@
 <div class="head col-xs-12">
-	<a class="logo col-md-4" href="<?php echo base_url('home'); ?>"><img src="/../assets/imgs/Navigation/logo.png" alt="TEDxUHasselt"></a>
+	<a class="logo col-md-4" href="<?php echo base_url('home'); ?>"><img src="<?php echo base_url('assets/imgs/Navigation/logo.png'); ?>" alt="TEDxUHasselt"></a>
 	<a id="menu-toggle" class="logo" href="#"><i class="icon-reorder"></i></a>
 	<nav class="col-md-8" id="navigation">
 		<ul class="col-md-12 " id="main-menu">

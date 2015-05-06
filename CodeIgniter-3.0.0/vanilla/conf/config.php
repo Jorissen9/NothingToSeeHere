@@ -16,6 +16,7 @@ $Configuration['EnabledApplications']['Vanilla'] = 'vanilla';
 // EnabledPlugins
 $Configuration['EnabledPlugins']['GettingStarted'] = 'GettingStarted';
 $Configuration['EnabledPlugins']['HtmLawed'] = 'HtmLawed';
+$Configuration['EnabledPlugins']['jsconnect'] = TRUE;
 
 // Garden
 $Configuration['Garden']['Title'] = 'TEDxUHasselt Forum';
@@ -47,6 +48,7 @@ $Configuration['Garden']['TrustedDomains'] = array('');
 $Configuration['Plugins']['GettingStarted']['Dashboard'] = '1';
 $Configuration['Plugins']['GettingStarted']['Categories'] = '1';
 $Configuration['Plugins']['GettingStarted']['Plugins'] = '1';
+$Configuration['Plugins']['GettingStarted']['Discussion'] = '1';
 
 // Routes
 $Configuration['Routes']['DefaultController'] = 'discussions';
@@ -54,4 +56,4 @@ $Configuration['Routes']['DefaultController'] = 'discussions';
 // Vanilla
 $Configuration['Vanilla']['Version'] = '2.1.9';
 
-// Last edited by Admin (127.0.0.1)2015-05-03 17:53:51
+// Last edited by Admin (127.0.0.1)2015-05-04 12:45:56

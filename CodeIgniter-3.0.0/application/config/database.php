@@ -64,11 +64,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'qtfs4lroib.database.windows.net',
-	'username' => 'appdev04',
-	'password' => '#TomatenPlukker04',
-	'database' => 'TEDxDB',
-	'dbdriver' => 'sqlsrv',
+	'hostname' => 'eu-cdbr-azure-west-a.cloudapp.net',
+	'username' => 'b470115e9fa4cd',
+	'password' => 'bff3b064',
+	'database' => 'TEDxUHasseltDB',
+	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => TRUE,
