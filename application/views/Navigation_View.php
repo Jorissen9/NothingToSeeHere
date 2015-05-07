@@ -16,16 +16,16 @@
 				<a href="#">About</a>
 				<ul class="sub-menu">
 					<li>
-						<a href="#">TEDxPXL</a>
+						<a href="<?php echo base_url('tedxpxl')?>" title="tedxpxl">TEDxPXL</a>
 					</li>
 					<li>
-						<a href="#">Our Team</a>
+						<a href="<?php echo base_url('team')?>" title="team">Our Team</a>
 					</li>
 					<li>
-						<a href="#">Alumni Members</a>
+						<a href="<?php echo base_url('alumni')?>" title="alumni">Alumni Members</a>
 					</li>
 					<li>
-						<a href="#">Our Partners</a>
+						<a href="<?php echo base_url('partners')?>" title="partners">Our Partners</a>
 					</li>
 				</ul>
 			</li>
