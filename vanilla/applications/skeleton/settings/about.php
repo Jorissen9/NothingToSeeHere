@@ -11,7 +11,7 @@ $ApplicationInfo['Skeleton'] = array(
    'SetupController' => 'setup',
    'AllowEnable' => FALSE, // Remove this when you create your own application (leaving it will make it so the application can't be enabled)
    'Author' => "Your Name",
-   'AuthorEmail' => 'Your Email',
+   'AuthorEmail' => 'contact.tedxpxl@gmail.com',
    'AuthorUrl' => 'http://your.domain.com',
    'License' => 'Your choice of license'
 );

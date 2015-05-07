@@ -1,10 +1,10 @@
 <li class="col-lg-1 pull-right <?php echo($this -> uri -> segment(1) == 'signup') ? 'current-menu-item' : ''; ?>">
-	<a href="<?php echo base_url('signup')?>" title="Sign Up">Sign Up</a>
+	<!--<a  href="<?php echo base_url('signup')?>" title="Sign Up">Sign Up</a>-->
+	<a href="/NothingToSeeHere/vanilla/index.php?p=/entry/register&amp;Target=discussions" rel="nofollow">Sign Up</a>
 </li>
 <li class="col-lg-1 pull-right">
 
 	<a class="dropdown-toggle" href="#" title="Sign In" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
-
 	<div class="dropdown-menu pull-right" style="padding: 15px; padding-bottom: 15px; margin-top: 15px; width:300px;">
 		<?php echo validation_errors(); ?>
 		<?php echo form_open('verifylogin', array('id' => 'login-form')); ?>
