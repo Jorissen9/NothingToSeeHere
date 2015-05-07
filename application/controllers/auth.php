@@ -21,25 +21,27 @@ class Auth extends CI_Controller
     // below for reference. Please remove that and add your own Authentication 
     // related code!
     
-    $clientID = "1234";
-    $secret = "1234";
+    $clientID = "372750243";
+    $secret = "0db1130bd2526eca034c49389d21377c";
 
     
     $vanUser = array();
 
-    if ($this->tank_auth->is_logged_in()) 
+    if ($this -> session -> userdata('logged_in')) 
     { 
       // 2. Grab the current user from your session management system or database here.
+      $session_data = $this -> session -> userdata('logged_in');
+	  
       // 3. Fill in the user information in a way that Vanilla can understand.
-      $this->userID = $this->tank_auth->get_user_id();
-      $this->userName = $this->tank_auth->get_username();
-      $this->user = $this->users->getUserByID($this->userID);
+      //$this->userID = $this->tank_auth->get_user_id();
+      //$this->userName = $this->tank_auth->get_username();
+      //$this->user = $this->users->getUserByID($this->userID);
       
       // CHANGE THESE FOUR LINES.
-      $vanUser['uniqueid'] = $this->userID;
-      $vanUser['name'] = $this->user->FirstName . " " . $this->user->LastName;
-      $vanUser['email'] = $this->user->Email;
-      $vanUser['photourl'] = $this->user->ProfilePicture;
+      $vanUser['uniqueid'] = $session_data['UserID'];
+      $vanUser['name'] = $session_data['Name'];
+      $vanUser['email'] = $session_data['Email'];
+      $vanUser['photourl'] = $session_data['Photo'];
     }
     
     // 4. Generate the jsConnect string.
