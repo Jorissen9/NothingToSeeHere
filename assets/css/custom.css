@@ -123,7 +123,8 @@ ol, ul {
 }
 
 #main-menu > li:hover > a,
-#main-menu > li.current-menu-item > a {
+#main-menu > li.current-menu-item > a,
+#main-menu > li.parent > ul.sub-menu > li.current-submenu-item > a  {
 	color: #FF2B06;
 }
 
@@ -238,7 +239,8 @@ ul.sub-menu > li > a.parent {
 	}
 
 	#main-menu > li:hover > a,
-	#main-menu > li.current-menu-item > a {
+	#main-menu > li.current-menu-item > a
+	#main-menu > li.parent > ul.sub-menu > li.current-submenu-item > a {
 		border: 1px solid #444 !important;
 		color: #fff !important;
 	}

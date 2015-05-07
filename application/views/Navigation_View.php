@@ -12,20 +12,20 @@
 			<li class="col-lg-1 <?php echo($this -> uri -> segment(1) == 'forum') ? 'current-menu-item' : ''; ?>">
 				<a href="<?php echo base_url('forum')?>" title="forum">Forums</a>
 			</li>
-			<li class="col-lg-1 parent">
-				<a href="#">About</a>
+			<li class="col-lg-1 parent <?php echo($this -> uri -> segment(1) == 'about') ? 'current-menu-item' : ''; ?>">
+				<a href="<?php echo site_url('about/tedxpxl')?>">About</a>
 				<ul class="sub-menu">
-					<li>
-						<a href="<?php echo base_url('tedxpxl')?>" title="tedxpxl">TEDxPXL</a>
+					<li class="<?php echo($this -> uri -> segment(2) == 'tedxpxl') ? 'current-submenu-item' : ''; ?>">
+						<a href="<?php echo site_url('about/tedxpxl')?>" title="tedxpxl">TEDxPXL</a>
 					</li>
-					<li>
-						<a href="<?php echo base_url('team')?>" title="team">Our Team</a>
+					<li class="<?php echo($this -> uri -> segment(2) == 'team') ? 'current-submenu-item' : ''; ?>">
+						<a href="<?php echo base_url('about/team')?>" title="team">Our Team</a>
 					</li>
-					<li>
-						<a href="<?php echo base_url('alumni')?>" title="alumni">Alumni Members</a>
+					<li class="<?php echo($this -> uri -> segment(2) == 'alumni') ? 'current-submenu-item' : ''; ?>">
+						<a href="<?php echo base_url('about/alumni')?>" title="alumni">Alumni Members</a>
 					</li>
-					<li>
-						<a href="<?php echo base_url('partners')?>" title="partners">Our Partners</a>
+					<li class="<?php echo($this -> uri -> segment(2) == 'partners') ? 'current-submenu-item' : ''; ?>">
+						<a href="<?php echo base_url('about/partners')?>" title="partners">Our Partners</a>
 					</li>
 				</ul>
 			</li>
