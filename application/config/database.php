@@ -64,10 +64,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'eu-cdbr-azure-west-a.cloudapp.net',
-	'username' => 'b470115e9fa4cd',
-	'password' => 'bff3b064',
-	'database' => 'TEDxUHasseltDB',
+	'hostname' => 'eu-cdbr-azure-west-c.cloudapp.net',
+	'username' => 'bff8904e7c51da',
+	'password' => '8b7268f3',
+	'database' => 'TEDxPXL',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
