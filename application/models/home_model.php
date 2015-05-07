@@ -4,9 +4,9 @@ Class Home_Model extends CI_Model {
 
 	function get_posts() {
 		
-		$page_id = 'TEDxUHasselt';
+		$page_id = 'TEDxEvents';
 		$access_token = '384545391746432|kMtO9DQn412t0WTd6MfLo3fsKkI';
-		$fbid = "TEDxUHasselt";
+		$fbid = "TEDxEvents";
 		$limit = 5;
 		$posts = "";
 		
