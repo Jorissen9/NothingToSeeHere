@@ -39,7 +39,6 @@ class Auth extends CI_Controller
       
       // CHANGE THESE FOUR LINES.
       $User['uniqueid'] = $session_data['UserID'];
-	  $User['client_id'] = $clientID;
       $User['name'] = $session_data['Name'];
       $User['email'] = $session_data['Email'];
       $User['photourl'] = $session_data['Photo'];
@@ -51,7 +50,7 @@ class Auth extends CI_Controller
     // You can also use a hash name like md5, sha1 etc which must be the name as the connection settings in Vanilla.
     $secure = true; 
     $this -> jsconnect -> WriteJsConnect($User, $_GET, $clientID, $secret, $secure);
-	$this -> session -> set_userdata('logged_in', $User);
+	//$this -> session -> set_userdata('logged_in', $User);
   }
 
 }
