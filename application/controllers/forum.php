@@ -12,12 +12,12 @@ class Forum extends MY_Controller {
 		
 		$session_data = $this -> session -> userdata('logged_in');
 		
-		$data['User'] = $session_data['User'];
+		$data['User'] = $session_data;
 		$data['ClientID'] = "372750243";
 		$data['Secret'] = "0db1130bd2526eca034c49389d21377c";
 		
 
-		$this -> load -> view('forum_view', $data, true);
+		$this -> load -> view('forum_view', $data);
 		
 	}
 	

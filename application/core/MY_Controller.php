@@ -9,6 +9,7 @@ class MY_Controller extends CI_Controller {
 			$session_data = $this -> session -> userdata('logged_in');
 			$data['username'] = $session_data['Name'];
 			$data['session'] = $this -> load -> view('signout_view', $data, true);
+			var_dump($session_data);
 			$this -> load -> view('Navigation_View', $data);
 
 		} else {
