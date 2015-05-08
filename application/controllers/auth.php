@@ -7,7 +7,7 @@ class Auth extends CI_Controller
 		parent::__construct();
 
 		//Add this line to load the library from the library folder
-    $this->load->library('jsconnect');
+   		 //$this->load->library('jsconnect'); autoload config
 	}
 
 	function index()
@@ -25,7 +25,7 @@ class Auth extends CI_Controller
     $secret = "0db1130bd2526eca034c49389d21377c";
 
     
-    $vanUser = array();
+    $User = array();
 
     if ($this -> session -> userdata('logged_in')) 
     { 
@@ -38,10 +38,11 @@ class Auth extends CI_Controller
       //$this->user = $this->users->getUserByID($this->userID);
       
       // CHANGE THESE FOUR LINES.
-      $vanUser['uniqueid'] = $session_data['UserID'];
-      $vanUser['name'] = $session_data['Name'];
-      $vanUser['email'] = $session_data['Email'];
-      $vanUser['photourl'] = $session_data['Photo'];
+      $User['uniqueid'] = $session_data['UserID'];
+	  $User['client_id'] = $clientID;
+      $User['name'] = $session_data['Name'];
+      $User['email'] = $session_data['Email'];
+      $User['photourl'] = $session_data['Photo'];
     }
     
     // 4. Generate the jsConnect string.
@@ -49,7 +50,8 @@ class Auth extends CI_Controller
     // This should be true unless you are testing. 
     // You can also use a hash name like md5, sha1 etc which must be the name as the connection settings in Vanilla.
     $secure = true; 
-    $this->jsconnect->WriteJsConnect($vanUser, $_GET, $clientID, $secret, $secure);
+    $this -> jsconnect -> WriteJsConnect($User, $_GET, $clientID, $secret, $secure);
+	$this -> session -> set_userdata('logged_in', $User);
   }
 
 }

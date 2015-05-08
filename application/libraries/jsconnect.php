@@ -47,7 +47,7 @@ class jsconnect
         elseif (!isset($Request['timestamp']) && !isset($Request['signature'])) {
           if (is_array($User) && count($User) > 0) {
               // This isn't really an error, but we are just going to return public information when no signature is sent.
-              $Error = array('name' => $User['name'], 'photourl' => @$User['photourl']);
+              $Error = array('name' => (string)@$User['name'], 'photourl' => @$User['photourl'], 'signedin' => true);
           } else {
               $Error = array('name' => '', 'photourl' => '');
           }
@@ -113,21 +113,35 @@ class jsconnect
   * @return string 
   * @since 1.1b
   */
-  function JsHash($String, $Secure = TRUE) {
-    switch ($Secure) {
-        case 'md5':
-        case TRUE:
-        case FALSE:
-          return md5($String);
-        case 'sha1':
-          return sha1($String);
-          break;
-        default:
-          return hash($Secure, $String).$Secure;
-    }
-  }
+function JsHash($String, $Secure = TRUE) {
+   if ($Secure === TRUE)
+      $Secure = 'md5';
+   
+   switch ($Secure) {
+      case 'sha1':
+         return sha1($String);
+         break;
+      case 'md5':
+      case FALSE:
+         return md5($String);
+      default:
+         return hash($Secure, $String);
+   }
+}
 
-  function JsTimestamp() {
+function JsTimestamp() {
     return time();
-  }
+}
+
+function JsSSOString($User, $ClientID, $Secret) {
+   if (!isset($User['client_id']))
+      $User['client_id'] = $ClientID;
+   
+   $String = base64_encode(json_encode($User));
+   $Timestamp = time();
+   $Hash = hash_hmac('sha1', "$String $Timestamp", $Secret);
+   
+   $Result = "$String $Hash $Timestamp hmacsha1";
+   return $Result;
+}
 }

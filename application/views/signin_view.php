@@ -1,6 +1,5 @@
 <li class="col-lg-1 pull-right <?php echo($this -> uri -> segment(1) == 'signup') ? 'current-menu-item' : ''; ?>">
 	<a  href="<?php echo base_url('signup')?>" title="Sign Up">Sign Up</a>
-	<!--<a href="<?php echo base_url('vanilla/index.php?p=/entry/register&amp;Target=discussions')?>" rel="nofollow">Sign Up</a>-->
 </li>
 <li class="col-lg-1 pull-right">
 
