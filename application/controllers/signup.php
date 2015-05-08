@@ -11,7 +11,7 @@ class Signup extends MY_Controller {
 
 	public function index() {
 
-
+		$privatekey = "6LdqbAYTAAAAAPMbTBfQyReKtuKsRGy8sjxlWZ7P";
 		$this -> form_validation -> set_rules('firstname', 'First Name', 'trim|required|min_length[2]|xss_clean');
 		$this -> form_validation -> set_rules('lastname', 'Last Name', 'trim|required|min_length[2]|xss_clean');
 		$this -> form_validation -> set_rules('username', 'Username', 'trim|required|min_length[4]|xss_clean');
@@ -31,7 +31,7 @@ class Signup extends MY_Controller {
 				$this -> load -> view('signup_view');
 				header('location: signup/');
 			} else {
-				$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=YOUR SECRET KEY&response=" . $captcha . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
+				$response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=". $privatekey. "&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
 				if ($response . success == false) {
 					$this -> session -> set_flashdata('error', 'Incorrect captcha');
 					$this -> load -> view('signup_view');

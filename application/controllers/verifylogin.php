@@ -16,13 +16,12 @@ class Verifylogin extends CI_Controller {
 		$this -> form_validation -> set_rules('password', 'Password', 'trim|required|xss_clean|callback_check_database');
 
 		if ($this -> form_validation -> run() == FALSE) {
-			//Field validation failed.  User redirected to login page
-			//redirect('home','auto');
+
 			echo json_encode(array('st'=>0,'msg' => validation_errors()));
 			
 		} else {
 			echo json_encode(array('st'=>1,'msg' => "logged in successful"));
-			//redirect('home', 'refresh');
+
 		}
 		
 	}
@@ -36,12 +35,12 @@ class Verifylogin extends CI_Controller {
 		//var_dump($result);
 
 		if ($result) {
-			//$sess_array = array();
-//			foreach ($result as $row) {
-//				$sess_array = array('UserID' => $row -> UserID, 'Name' => $row -> Name, 'Email' => $row -> Email, 'Photo' => $row -> Photo);
+			$sess_array = array();
+			foreach ($result as $row) {
+				$sess_array = array('UserID' => $row -> UserID, 'Name' => $row -> Name, 'Email' => $row -> Email, 'Photo' => $row -> Photo);
 				$this -> form_validation -> set_message('check_database', '');
-				$this -> session -> set_userdata('logged_in', $result);
-//			}
+				$this -> session -> set_userdata('logged_in', $sess_array);
+			}
 			return TRUE;
 		} else {
 			$this -> form_validation -> set_message('check_database', 'Invalid username or password');

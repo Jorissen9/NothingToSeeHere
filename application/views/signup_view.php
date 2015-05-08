@@ -3,7 +3,7 @@
     <div class="col-md-cust1 selected">
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-                <?php echo form_open('signup'); ?>
+                <?php echo form_open('signup', array('Action' => base_url('vanilla/entry/register'), 'id' => 'Form_User_Register')); ?>
                   <h2 style="margin-bottom:25px;">Register</h2>  
                 <?php echo validation_errors('<p class="alert alert-dismissable alert-danger"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'); ?> </p>
                 <?php
@@ -12,7 +12,7 @@
 					echo $this -> session -> flashdata('error');
 					echo "</p>";
 				}
- ?>
+ 				?>
                 <?php
 				if ($this -> session -> flashdata('success') != FALSE) {
 					echo "<p class=\"alert alert-dismissable alert-success\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>";
@@ -60,7 +60,7 @@
 	                    <select class="selectpicker" name="dob_year"><option value="0">Year:</option><?php echo generate_options(1900, date("Y")) ?></select>
                		</div>
                 </p> 
-                <div style="margin-top:50px; margin-left:75px;" class="g-recaptcha" data-sitekey="6LdeNgYTAAAAAKWAtvDEN73z9ybf1nbjfcSdaqfr"></div>
+                <div style="margin-top:50px; margin-left:75px;" class="g-recaptcha" data-sitekey="6LdqbAYTAAAAAD_bmOpUY5oJxRI9gnnhnpJMCLRN"></div>
 	            <div class="row">
 	                <div class="col-xs-6 col-md-6 pull-left" style="margin-top:50px;">
 	                   <input type="submit" class="btn btn-block btn-lg" value="Sign Up" />

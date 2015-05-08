@@ -46,7 +46,7 @@ class jsconnect {
 			elseif (!isset($Request['timestamp']) && !isset($Request['signature'])) {
 				if (is_array($User) && count($User) > 0) {
 					// This isn't really an error, but we are just going to return public information when no signature is sent.
-					$Error = array('name' => (string)@$User['name'], 'photourl' => @$User['photourl'], 'signedin' => true);
+					$Error = array('name' => $User['name'], 'photourl' => $User['photourl'], 'signedin' => true);
 				} else {
 					$Error = array('name' => '', 'photourl' => '');
 				}

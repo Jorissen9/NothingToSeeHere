@@ -6,8 +6,8 @@
 			<li class="col-lg-1 <?php echo($this -> uri -> segment(1) == 'home' || $this -> uri -> segment(1) == '') ? 'current-menu-item' : ''; ?>">
 				<a href="<?php echo base_url('home'); ?>" title="Home">Home</a>
 			</li>
-			<li class="col-lg-1">
-				<a href="#">Events</a>
+			<li class="col-lg-1 <?php echo($this -> uri -> segment(1) == 'events') ? 'current-menu-item' : ''; ?>">
+				<a href="<?php echo base_url('events')?>" title="events">Events</a>
 			</li>
 			<li class="col-lg-1 <?php echo($this -> uri -> segment(1) == 'forum') ? 'current-menu-item' : ''; ?>">
 				<a href="<?php echo base_url('forum')?>" title="forum">Forums</a>
@@ -16,7 +16,7 @@
 				<a href="<?php echo site_url('about/tedxpxl')?>">About</a>
 				<ul class="sub-menu">
 					<li class="<?php echo($this -> uri -> segment(2) == 'tedxpxl') ? 'current-submenu-item' : ''; ?>">
-						<a href="<?php echo site_url('about/tedxpxl')?>" title="tedxpxl">TEDxPXL</a>
+						<a href="<?php echo base_url('about/tedxpxl')?>" title="tedxpxl">TEDxPXL</a>
 					</li>
 					<li class="<?php echo($this -> uri -> segment(2) == 'team') ? 'current-submenu-item' : ''; ?>">
 						<a href="<?php echo base_url('about/team')?>" title="team">Our Team</a>
