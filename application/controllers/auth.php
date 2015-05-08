@@ -23,7 +23,7 @@ class Auth extends CI_Controller
     
     $clientID = "372750243";
     $secret = "0db1130bd2526eca034c49389d21377c";
-
+	$secure = true; 
     
     $User = array();
 
@@ -42,15 +42,17 @@ class Auth extends CI_Controller
       $User['name'] = $session_data['Name'];
       $User['email'] = $session_data['Email'];
       $User['photourl'] = $session_data['Photo'];
+	  
     }
     
     // 4. Generate the jsConnect string.
 
     // This should be true unless you are testing. 
     // You can also use a hash name like md5, sha1 etc which must be the name as the connection settings in Vanilla.
-    $secure = true; 
+
     $this -> jsconnect -> WriteJsConnect($User, $_GET, $clientID, $secret, $secure);
-	//$this -> session -> set_userdata('logged_in', $User);
+	
+	//
   }
 
 }

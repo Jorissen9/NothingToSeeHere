@@ -8,18 +8,16 @@ class Forum extends MY_Controller {
 
 	}
 
-    function index() {
-		
-		$session_data = $this -> session -> userdata('logged_in');
-		
-		$data['User'] = $session_data;
+	function index() {
+
+
+		//$data['User'] = $session_data;
 		$data['ClientID'] = "372750243";
 		$data['Secret'] = "0db1130bd2526eca034c49389d21377c";
-		
+		//$data['vanilla_sso'] = $session_data['vanilla_sso'];
 
 		$this -> load -> view('forum_view', $data);
-		
+
 	}
-	
 
 }
