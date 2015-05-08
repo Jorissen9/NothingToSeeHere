@@ -7,10 +7,9 @@
 	var vanilla_identifier = 'ThisIsSPartaaa';
 	
 	var signature = hmacsha1(signature_string + " " + timestamp, secret);
-	
-	<?php $session_data = $this -> session -> userdata('logged_in'); ?>
+
 	// Your unique identifier for the content being commented on
-	var vanilla_sso = "<?php $this->jsconnect->WriteJsConnect($session_data['User'], $_GET, "372750243", "0db1130bd2526eca034c49389d21377c", $secure); ?>" ;
+	var vanilla_sso = "<?php $this->jsconnect->WriteJsConnect($User, $_GET, $ClientID, $Secret, $secure); ?>" ;
 	// Your SSO string.
 
 	/*** DON'T EDIT BELOW THIS LINE ***/
