@@ -268,3 +268,29 @@ ul.sub-menu > li > a.parent {
 #error-message{
 	color:red;
 }
+
+/* Team Members */
+
+.memberImageText {
+				position: absolute;
+				width: 55em;
+				height: 135em;
+				}
+.memberImage 	{
+				position: relative;
+				width: 10em; 
+				height: 10em;  
+				}
+.memberText 	{
+				position: relative;
+				margin-top: -10em;
+				margin-left: 12em;
+				width: 40em; 
+				height: 10em; 
+				}
+
+/* Footer */
+
+.col-lg-12 {
+		background-color: #333333;
+}

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Home extends MY_Controller {
 
 	public function __construct() {
-		parent::__construct();
+		parent::__construct();		
 
 	}
 
@@ -16,7 +16,7 @@ class Home extends MY_Controller {
 		
 		$this -> load -> view('sidebar_view');
 		$this -> load -> view('home_view',$posts);
-		
+		$this -> load -> view('footer_view');	
 		
 	}
 	
@@ -25,7 +25,4 @@ class Home extends MY_Controller {
 		session_destroy();
 		redirect('home', 'refresh');
 	}
-	
-	
-
 }
