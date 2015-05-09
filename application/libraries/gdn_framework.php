@@ -6,7 +6,7 @@
 define('APPLICATION', 'Vanilla');
 define('APPLICATION_VERSION', '2.1.10');
 define('DS', '/');
-define('PATH_ROOT', 'C:\Users\Kenny\Documents\GitHub\NothingToSeeHere\vanilla');
+define('PATH_ROOT', '.\vanilla');
 // Change PATH_ROOT to the path to your forum.
 // Display all PHP errors for development purposes.
 error_reporting(E_ERROR | E_PARSE | E_CORE_ERROR | E_COMPILE_ERROR | E_USER_ERROR | E_RECOVERABLE_ERROR);
