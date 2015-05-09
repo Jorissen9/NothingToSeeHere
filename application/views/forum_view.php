@@ -1,4 +1,9 @@
-<!--<script type="text/javascript" src="<?php echo base_url('vanilla/js/embed.js')?>"></script>-->
+<div>
+	<script type="text/javascript" src="<?php echo base_url('vanilla/js/embed.js')?>"></script>
+</div>
+
+
+<!--<div id="test">
 <script type="text/javascript">
 	/*** Required Settings: Edit BEFORE pasting into your web page ***/
 	var vanilla_forum_url = 'http://tedxpxl.azurewebsites.net/vanilla';
@@ -24,7 +29,8 @@
 		var timestamp = new Date().getTime();
 		vanilla.src = vanilla_forum_url + '/js/embed.js';
 
-		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(vanilla);
+		(document.getElementsByTagName('head')[0] || document.getElementById('test')[0]).appendChild(vanilla);
 	})();
 
 </script>
+</div>-->

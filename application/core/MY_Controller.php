@@ -2,6 +2,7 @@
 class MY_Controller extends CI_Controller {
 	function __construct() {
 		parent::__construct();
+		require_once(APPPATH.'libraries/gdn_framework.php');
 
 		$this -> load -> view('header_view');
 		

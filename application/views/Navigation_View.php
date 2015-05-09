@@ -13,7 +13,7 @@
 				<a href="<?php echo base_url('forum')?>" title="forum">Forums</a>
 			</li>
 			<li class="col-lg-1 parent <?php echo($this -> uri -> segment(1) == 'about') ? 'current-menu-item' : ''; ?>">
-				<a href="<?php echo site_url('about/tedxpxl')?>">About</a>
+				<a href="<?php echo base_url('about/tedxpxl')?>">About</a>
 				<ul class="sub-menu">
 					<li class="<?php echo($this -> uri -> segment(2) == 'tedxpxl') ? 'current-submenu-item' : ''; ?>">
 						<a href="<?php echo base_url('about/tedxpxl')?>" title="tedxpxl">TEDxPXL</a>

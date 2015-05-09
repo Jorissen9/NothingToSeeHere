@@ -22,7 +22,8 @@ class Home extends MY_Controller {
 	
 	function logout() {
 		$this -> session -> unset_userdata('logged_in');
+		
 		session_destroy();
-		redirect('home', 'refresh');
+		redirect(base_url('vanilla/entry/signout/'));
 	}
 }
