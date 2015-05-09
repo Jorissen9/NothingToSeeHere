@@ -21,7 +21,7 @@ class Contact extends MY_Controller {
 		//run validation on form input
 		if ($this -> form_validation -> run() == FALSE) {
 			//validation fails
-			$this -> load -> view('contact_view');
+			$this -> load -> template('contact_view');
 
 		} else {
 			//get the form data

@@ -14,16 +14,17 @@ class Home extends MY_Controller {
 		$posts['fbdata'] = $this->home_model->get_posts();
 		
 		
-		$this -> load -> view('sidebar_view');
-		$this -> load -> view('home_view',$posts);
-		$this -> load -> view('footer_view');	
+		//$this -> load -> view('sidebar_view');
+		$this -> load -> template('home_view',$posts);
+		//$this -> load -> view('footer_view');	
 		
 	}
 	
 	function logout() {
-		$this -> session -> unset_userdata('logged_in');
+		//$this -> session -> unset_userdata('logged_in');
 		
-		session_destroy();
-		redirect(base_url('vanilla/entry/signout/'));
+		//session_destroy();
+		//signOutUrl(base_url('forum/#/entry/signout'));
+		signOutUrl('{signout_link}');
 	}
 }

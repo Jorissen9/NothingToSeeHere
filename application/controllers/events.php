@@ -10,7 +10,7 @@ class Events extends MY_Controller {
 
     function index() {
 		
-		$this -> load -> view('events_view');
+		$this -> load -> template('events_view');
 		
 		
 	}

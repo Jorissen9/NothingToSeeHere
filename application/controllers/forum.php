@@ -16,7 +16,7 @@ class Forum extends MY_Controller {
 		$data['Secret'] = "0db1130bd2526eca034c49389d21377c";
 		//$data['vanilla_sso'] = $session_data['vanilla_sso'];
 		//$this -> load -> view('sidebar_view');
-		$this -> load -> view('forum_view', $data);
+		$this -> load -> template('forum_view', $data);
 		
 
 	}
