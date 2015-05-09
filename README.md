@@ -15,4 +15,4 @@ This product is brought to you by:
 \******************************/
 </pre>
 
-Copyright © Hogeschool PXL 2014 - 2015
+Copyright © Hogeschool TEDxPXL 2014 - 2015
