@@ -4,9 +4,9 @@
 			<li class="disabled"><span style="color:red; font-weight: bold">About</span></li>
 			<br/>
 			<li class="active">About TEDxPXL</li>
-			<li><a href="<?php echo base_url('team')?>" title="team">Our Team</a></li>
-			<li><a href="<?php echo base_url('alumni')?>" title="alumni members">Alumni Members</a></li>
-			<li><a href="<?php echo base_url('partners')?>" title="partners">Our Partners</a></li>
+			<li><a href="<?php echo base_url('about/team')?>" title="team">Our Team</a></li>
+			<li><a href="<?php echo base_url('about/alumni')?>" title="alumni members">Alumni Members</a></li>
+			<li><a href="<?php echo base_url('about/partners')?>" title="partners">Our Partners</a></li>
 		</ul>
 		<h2>About TEDxPXL</h2>
 		<br/>
