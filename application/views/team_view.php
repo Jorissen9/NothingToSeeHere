@@ -8,7 +8,7 @@
 			<li><a href="<?php echo base_url('about/alumni')?>" title="alumni members">Alumni Members</a></li>
 			<li><a href="<?php echo base_url('about/partners')?>" title="partners">Our Partners</a></li>
 		</ul>
-		<div class="memberImageText">
+		<div class="col-md-12 content">
 			
 			<h2>Our team</h2>
 		<br/>
