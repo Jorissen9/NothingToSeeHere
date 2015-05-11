@@ -1,4 +1,4 @@
-<div class="head col-xs-12">
+<header class="head col-xs-12">
 	<a class="logo col-md-4" href="<?php echo base_url('home'); ?>"><img src="<?php echo base_url('assets/imgs/Navigation/logo.png'); ?>" alt="TEDxPXL"></a>
 	<a id="menu-toggle" class="logo" href="#"><i class="icon-reorder"></i></a>
 	<nav class="col-md-8" id="navigation">
@@ -36,4 +36,4 @@
 		</ul>
 	</nav>
 	<div class="clear"></div>
-</div>
+</header>
