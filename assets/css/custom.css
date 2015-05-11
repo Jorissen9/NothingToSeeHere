@@ -1,5 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
+.content{
+	padding-bottom: 50px;
+}
+
 html,body{
     height: 100%
 }
@@ -19,7 +23,6 @@ body {
 
 footer{
 	bottom:0px;
-	position:fixed;
 	width: 100%;
 	clear:both;
 	color:#eee;
@@ -286,7 +289,6 @@ ul.sub-menu > li > a.parent {
 /* Team Members */
 
 .memberImageText {
-				position: absolute;
 				width: 55em;
 				height: 135em;
 				}
