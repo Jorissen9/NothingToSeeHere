@@ -32,3 +32,12 @@
  *
  * Happy theming!
  */
+a.Button.RegisterLink, a.Button.ApplyButton, a.Button.SigninLink, a.Button.SignInPopup{
+    visibility:hidden;
+    display:none;
+}
+
+.invisible {
+    display: none;
+    visibility: hidden;
+}

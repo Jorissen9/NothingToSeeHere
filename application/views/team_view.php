@@ -80,7 +80,7 @@
 				<h3>Kenny Vanrusselt</h3>
 				<h5><span>TEDxPXL role:</span> Curator &amp; Founder</h5>
 				<div  class="memberImage">
-					<img src="../assets/imgs/Kenny.jpg" alt="Kenny Vanrusselt" width="128px" height="128px">
+					<img src="../assets/imgs/beavis.jpg" alt="Kenny Vanrusselt" width="128px" height="128px">
 				</div>
 				<div  class="memberText">
 					<p>Kenny founded TEDxPXL because he’s just too big a fan of spreading ideas. He is a dreamer and a sceptic, a rational optimist, and a child of renaissance and surrealism. He works part time as a statistician when he’s not figuring out what the next dots to connect or realization will be.</p>

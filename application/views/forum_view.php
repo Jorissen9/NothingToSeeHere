@@ -1,5 +1,7 @@
-<div>
-	<script type="text/javascript" src="<?php echo base_url('vanilla/js/embed.js')?>"></script>
+<div style="height: 100%;">
+	<script>
+	var script = document.createElement("script"); script.type = "text/javascript"; script.src = "<?php echo base_url('vanilla/js/embed.js')?>"; document.getElementsByTagName("head")[0].appendChild(script);
+	</script>
 </div>
 
 

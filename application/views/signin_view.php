@@ -1,9 +1,11 @@
-<li class="col-lg-1 pull-right <?php echo($this -> uri -> segment(1) == 'signup') ? 'current-menu-item' : ''; ?>">
-	<a  href="<?php echo base_url('signup')?>" title="Sign Up">Sign Up</a>
-</li>
-<li class="col-lg-1 pull-right">
 
-	<a class="dropdown-toggle" href="#" title="Sign In" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+<li class="col-lg-1 pull-right <?php echo($this -> uri -> segment(3) == 'registernocaptcha') ? 'current-menu-item' : ''; ?>">
+	<a href="<?php echo base_url('forum#/entry/registernocaptcha')?>" title="registernocaptcha">Sign Up</a>
+</li>
+<li class="col-lg-1 pull-right <?php echo($this -> uri -> segment(4) == 'signin') ? 'current-menu-item' : ''; ?>">
+	<a href="<?php echo base_url('forum#/entry/signin')?>" title="Sign In">Sign In</a>
+</li>
+<!--
 	<div class="dropdown-menu pull-right" style="padding: 15px; padding-bottom: 15px; margin-top: 15px; width:300px;">
 		<?php echo validation_errors(); ?>
 		<?php echo form_open('verifylogin', array('id' => 'login-form')); ?>
@@ -17,6 +19,5 @@
 		<input class="btn btn-block form-control" type="button" id="sign-in-google" value="Sign In with Google">
 		<input class="btn btn-block form-control" type="button" id="sign-in-twitter" value="Sign In with Twitter">
 		</form>
-	</div>
+	</div>-->
 
-</li>

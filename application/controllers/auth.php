@@ -1,3 +1,5 @@
+<!-- jsconnect auth used to safely authenticate through multiple sites / domains, currently not in use, but successfully tested! ~Kenny -->
+
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class Auth extends CI_Controller

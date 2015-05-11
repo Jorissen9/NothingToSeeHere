@@ -19,7 +19,7 @@ class jsConnectAutoSignInPlugin extends Gdn_Plugin {
       $Sender->AddCssFile('jsconnectAuto.css', 'plugins/jsconnectAutoSignIn');
       $Sender->AddJSFile('jsconnectAuto.js', 'plugins/jsconnectAutoSignIn');
       $Sender->AddDefinition('Connecting', T('jsconnectAutoSignIn.Connecting','Connecting...'));
-      $Sender->AddDefinition('ConnectingUser', T('jsconnectAutoSignIn.ConnectingUser','Please wait while we connect you to the forum...'));
+      $Sender->AddDefinition('ConnectingUser', T('jsconnectAutoSignIn.ConnectingUser','Hi % just connecting you to forum...'));
       if (C('Plugins.jsconnectAutoSignIn.HideConnectButton') || IsMobile()) {
         $Sender->Head->AddString('<style type="text/css">.ConnectButton{display:none!important;}</style>');
       }

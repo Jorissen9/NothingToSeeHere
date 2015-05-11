@@ -1,5 +1,6 @@
+
 <?php
-class Verifylogin extends CI_Controller {
+/*class Verifylogin extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
@@ -48,5 +49,5 @@ class Verifylogin extends CI_Controller {
 		}
 	}
 
-}
+}*/
 ?>

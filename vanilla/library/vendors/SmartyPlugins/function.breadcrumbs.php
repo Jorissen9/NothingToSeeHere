@@ -13,6 +13,7 @@ Contact Vanilla Forums Inc. at support [at] vanillaforums [dot] com
  * Render a breadcrumb trail for the user based on the page they are on.
  */
 function smarty_function_breadcrumbs($Params, &$Smarty) {
+	
    $Breadcrumbs = $Smarty->Controller->Data('Breadcrumbs');
    if (!is_array($Breadcrumbs))
       $Breadcrumbs = array();

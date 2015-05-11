@@ -1,6 +1,6 @@
 <?php if (!defined('APPLICATION')) exit(); ?>
 <div class="FormTitleWrapper">
-<h1><?php echo T("Apply for Membership") ?></h1>
+<h1><?php echo T("Register") ?></h1>
 <div class="FormWrapper">
    <?php
    $TermsOfServiceUrl = Gdn::Config('Garden.TermsOfService', '#');

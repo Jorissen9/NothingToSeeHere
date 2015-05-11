@@ -1,4 +1,4 @@
-<!-- Snippet: http://bootsnipp.com/snippets/featured/mix-amp-match-register -->
+<!-- This form has been replaced by the vanilla register form, even more secure and reliable ~Kenny -->
 <div id="register">
     <div class="col-md-cust1 selected">
         <div class="row">

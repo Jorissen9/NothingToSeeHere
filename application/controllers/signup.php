@@ -1,3 +1,6 @@
+<!-- This controller is no longer in use and has been replaced by the vanilla controllers ~Kenny -->
+
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -5,10 +8,11 @@ class Signup extends MY_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		$this -> load -> model('signup_model', '', TRUE);
+		//$this -> load -> model('signup_model', '', TRUE);
 
 	}
 
+/*
 	public function index() {
 
 		$privatekey = "6LdqbAYTAAAAAPMbTBfQyReKtuKsRGy8sjxlWZ7P";
@@ -64,6 +68,7 @@ class Signup extends MY_Controller {
 			$this -> form_validation -> set_message('date_check', 'The Birthdate field is required.');
 			return FALSE;
 		}
-	}
+	}*/
+
 
 }

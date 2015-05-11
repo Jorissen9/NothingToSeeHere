@@ -18,9 +18,10 @@ body {
 }
 
 footer{
+	bottom:0px;
 	position:fixed;
-	bottom:0;
 	width: 100%;
+	clear:both;
 	color:#eee;
 	background-color: #333;
 }
@@ -36,7 +37,8 @@ a {
 }
 
 a:hover{
-	color:#000;
+	color:#FF2B06;
+	text-decoration: none;
 }
 
 

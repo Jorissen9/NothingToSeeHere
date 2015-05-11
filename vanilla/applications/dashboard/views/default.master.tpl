@@ -32,7 +32,6 @@
       </div>
       <div id="Foot">
          <div class="Row">
-            <a href="{vanillaurl}" class="PoweredByVanilla" title="Community Software by Vanilla Forums">Powered by Vanilla</a>
             {asset name="Foot"}
          </div>
       </div>

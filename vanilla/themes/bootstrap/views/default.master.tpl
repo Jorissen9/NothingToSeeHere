@@ -6,7 +6,7 @@
     {asset name="Head"}
   </head>
   <body id="{$BodyID}" class="{$BodyClass} sticky-footer-body">
-    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <nav class="navbar navbar-default navbar-static-top {display_nav}" role="navigation" >
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -17,7 +17,6 @@
           </button>
           <a class="navbar-brand" href="{link path="home"}">{logo}</a>
         </div>
-
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             {categories_link}
@@ -36,10 +35,6 @@
               {dashboard_link}
               {signinout_link}
             </ul>
-          {else}
-            <ul class="nav navbar-nav navbar-right">
-              {signin_link}
-            </ul>
           {/if}
         </div>
       </div>
@@ -48,7 +43,9 @@
     <section class="container">
       <div class="row">
         <main class="page-content" role="main">
-          {breadcrumbs}
+        	<span class="{display_nav}">
+          		{breadcrumbs}
+          	</span>
           {if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList"))}
             <div class="well search-form">{searchbox}</div>
           {/if}
@@ -64,7 +61,8 @@
     <footer class="page-footer sticky-footer">
       <div class="container">
         <div class="clearfix">
-          <p style="text-align:center;" >{t c="Copyright"} &copy; {$smarty.now|date_format:"%Y"} <a href="{link path="home"}">{logo}</a></p>
+          <p style="text-align:center;">{t c="Copyright"} &copy; {$smarty.now|date_format:"%Y"} <a href="{link path="home"}">{logo}</a></p>
+          </p>
         </div>
         {asset name="Foot"}
       </div>

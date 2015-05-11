@@ -2,7 +2,11 @@
 class MY_Controller extends CI_Controller {
 	function __construct() {
 		parent::__construct();
+
+		require_once(APPPATH.'views/templates/default.master.php');
 		require_once(APPPATH.'libraries/gdn_framework.php');
+		
+		
 		$Session = Gdn::Session();
 		
 		if ($Session -> IsValid()) {
