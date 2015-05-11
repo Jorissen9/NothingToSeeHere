@@ -1,5 +1,5 @@
 <div class="col-xs-6">
-	<div class="col-md-9 pull-right">
+	<div class="col-md-9 pull-right content">
 		<br/>
 		<h2>Welcome to TEDxPXL</h2>
 		<br/>
