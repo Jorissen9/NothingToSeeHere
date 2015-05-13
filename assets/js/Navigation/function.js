@@ -20,21 +20,66 @@ $(document).ready(function() {
 	$('.dropdown-menu').find('form').click(function(e) {
 		e.stopPropagation();
 	});
-	
 
-	$(function() {
-		$('#login-form').submit(function() {
-			$.post($(this).attr('action'), $(this).serialize(), function(json) {
-				if (json.st == 0) {
-					$('#error-message').html(json.msg);
-				} else {
-					$('#error-message').html("");
-
-					location.reload();
-				}
-			}, 'json');
-			return false;
-		});
-	});
 
 });
+
+function changeHeader()
+{
+	document.getElementById("SignIn").innerHTML = 'Sign Out';
+	document.getElementById("SignIn").setAttribute("href", "forum/#/entry/signout/");
+		
+	document.getElementById("SignUp").innerHTML = 'Name';
+}
+
+$(function(){
+$('#Form_SignIn').click(function() {
+	e.preventDefault();
+	alert("test");
+		$.ajax({
+			
+		url: '/NothingToSeeHere/vanilla/index.php?p=/profile.json',
+		
+  		success: function() {
+  		  	
+			this.changeHeader();
+		}
+		
+
+		});
+	});  
+
+});
+/*$.ajax({
+
+	url : 'http://localhost/NothingToSeeHere/vanilla/index.php?p=/profile.json',
+	dataType : 'json',
+	success : function() {
+		alert('success');
+		//document.getElementById("SignIn").innerHTML = 'Sign Out';
+		if (json_object.hasOwnProperty('profile')) {
+			//do struff
+		}
+
+	},
+	error : function() {
+		alert('failure');
+		// check status && error
+	}
+
+});
+
+
+ $.ajax({
+ url:'http://localhost/NothingToSeeHere/vanilla/applications/dashboard/js/profile.js',
+ dataType: 'json',
+ async: false,
+ cache: false,
+ success: function(profile) {
+ if (profile) {
+ alert("WIN");
+ } else {
+ alert("LOSS");
+ }
+ }
+ });*/

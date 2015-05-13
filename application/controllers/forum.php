@@ -10,8 +10,8 @@ class Forum extends MY_Controller {
 
 	function index() {
 
-		$this -> load -> view('forum_view');
-		$this -> load -> view('templates/footer_view');
+		$this -> load -> template('forum_view');
+		//$this -> load -> view('templates/footer_view');
 		
 
 	}
