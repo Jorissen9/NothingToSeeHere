@@ -33,13 +33,13 @@
 				<a href="<?php echo base_url('contact')?>" title="contact">Contact</a>
 			</li>
 			<!--<?php echo $session?>-->
-
-			<li class="col-lg-1 pull-right <?php echo($this -> uri -> segment(3) == 'registernocaptcha') ? 'current-menu-item' : ''; ?>">
-				<a id="SignUp" href="<?php echo base_url('forum#/entry/registernocaptcha')?>" title="registernocaptcha">Sign Up</a>
-			</li>
 			<li class="col-lg-1 pull-right <?php echo($this -> uri -> segment(4) == 'signin') ? 'current-menu-item' : ''; ?>">
-				<a id="SignIn" href="<?php echo base_url('forum#/entry/signin')?>" title="Sign In">Sign In</a>
+				<a id="SignIn" href="<?php echo base_url('forum/#/entry/signin')?>" title="Sign In">Sign In</a>
 			</li>
+			<li class="col-lg-1 pull-right <?php echo($this -> uri -> segment(3) == 'registernocaptcha') ? 'current-menu-item' : ''; ?>">
+				<a id="SignUp" href="<?php echo base_url('forum/#/entry/registernocaptcha')?>" title="registernocaptcha">Sign Up</a>
+			</li>
+
 		</ul>
 	</nav>
 	<div class="clear"></div>

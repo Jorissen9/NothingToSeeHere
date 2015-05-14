@@ -447,7 +447,8 @@ class EntryController extends Gdn_Controller {
                   
                   // Sign the user in.
                   Gdn::Session()->Start($UserID, TRUE, TRUE);
-                  Gdn::UserModel()->FireEvent('AfterSignIn');
+                 // Gdn::UserModel()->FireEvent('AfterSignIn');
+				  alert($UserID);
          //         $this->_SetRedirect(TRUE);
                   $this->_SetRedirect($this->Request->Get('display') == 'popup');
                   $this->Render();

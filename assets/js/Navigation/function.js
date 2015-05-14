@@ -21,8 +21,12 @@ $(document).ready(function() {
 		e.stopPropagation();
 	});
 
+ $('.selectpicker').selectpicker({
 
+  });
 });
+
+
 
 function changeHeader()
 {
@@ -32,6 +36,7 @@ function changeHeader()
 	document.getElementById("SignUp").innerHTML = 'Name';
 }
 
+/*
 $(function(){
 $('#Form_SignIn').click(function() {
 	e.preventDefault();
@@ -49,17 +54,16 @@ $('#Form_SignIn').click(function() {
 		});
 	});  
 
-});
-/*$.ajax({
+});*/
+///NothingToSeeHere/vanilla/index.php?p=/entry/passwordrequest
+//http://localhost/NothingToSeeHere/vanilla/index.php?p=/entry/signin
+$(function() {
+$('#Form_User_SignIn').submit(function() {
+$.ajax({
 
-	url : 'http://localhost/NothingToSeeHere/vanilla/index.php?p=/profile.json',
-	dataType : 'json',
+	url : '/NothingToSeeHere/vanilla/index.php?p=/entry/passwordrequest',
 	success : function() {
-		alert('success');
-		//document.getElementById("SignIn").innerHTML = 'Sign Out';
-		if (json_object.hasOwnProperty('profile')) {
-			//do struff
-		}
+		changeHeader();
 
 	},
 	error : function() {
@@ -67,8 +71,10 @@ $('#Form_SignIn').click(function() {
 		// check status && error
 	}
 
+		});
+	});
 });
-
+/*
 
  $.ajax({
  url:'http://localhost/NothingToSeeHere/vanilla/applications/dashboard/js/profile.js',

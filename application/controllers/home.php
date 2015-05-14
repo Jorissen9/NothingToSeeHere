@@ -13,10 +13,7 @@ class Home extends MY_Controller {
 		$this -> load ->model('home_model');
 		$posts['fbdata'] = $this->home_model->get_posts();
 		
-		
-		//$this -> load -> view('sidebar_view');
 		$this -> load -> template('home_view',$posts);
-		//$this -> load -> view('footer_view');	
 		
 	}
 	

@@ -37,6 +37,10 @@ a.Button.RegisterLink, a.Button.ApplyButton, a.Button.SigninLink, a.Button.SignI
     display:none;
 }
 
+li>a:hover{
+	background-color: #333; 
+}
+
 .invisible {
     display: none;
     visibility: hidden;
