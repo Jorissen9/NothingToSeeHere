@@ -1,5 +1,5 @@
-<div class="col-xs-6">
-	<div class="col-md-9 pull-right content">
+<div class="col-md-9">
+	<div class="col-md-10 pull-left col-md-offset-1 content">
 		<br/>
 		<h2>Welcome to TEDxPXL</h2>
 		<br/>
@@ -9,6 +9,7 @@
 		$posts = "";
 		foreach ($fbdata -> data as $post) {
 
+			$posts .= '<div class="col-xs-12 content"><div class="col-xs-7" style="background-color: #F4F4F4;">';
 			$fbTime = strtotime($post -> created_time);
 			$myTime = date("d M Y h:ia", $fbTime);
 
@@ -31,6 +32,7 @@
 				continue;
 
 			$posts .= '</h4><br/><hr />';
+			$posts .= '</div></div>';
 
 		}
 
