@@ -1,5 +1,5 @@
-<div class="col-xs-6">
-	<div class="col-md-9 pull-right content">
+<div class="col-md-9">
+	<div class="col-md-10 pull-left col-md-offset-1 content">
 		<ul class="breadcrumb">
 			<li class="disabled"><span style="color:red; font-weight: bold">About</span></li>
 			<br/>

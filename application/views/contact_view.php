@@ -1,6 +1,6 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2 ">
+<div style="padding-top: 50px" class="col-xs-9">
+    <div class="col-md-12 content">
+        <div class="col-md-9 col-md-offset-2">
             <?php $attributes = array("class" => "form-horizontal", "name" => "contactform");
             echo form_open("contact/index", $attributes);?>
             <fieldset>

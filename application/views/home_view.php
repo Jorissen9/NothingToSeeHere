@@ -15,12 +15,18 @@
 			if (isset($post -> message)) {
 				$posts .= '<h5><p style="line-height:60px;">Posted on: ' . $myTime . '</h5>';
 				$posts .= '<h4><a href="' . $post -> link . '">' . $post -> message . '</a></p>';
+			
+			if (isset($post -> picture)) {
+				$posts .= '<p style="line-height:60px;"><img src="' .$post -> full_picture. '" class="fbpicture" style="width:504px;" /></p>';
+				
+			}
 
-				if (isset($post -> description)) {
-					$posts .= '<p style="line-height:60px;"><img src="' . $post -> picture . '" class="fbpicture" style="width:470px; height:246px;" /></p>';
-					$posts .= '<p>' . $post -> description . '</p>';
+				
+			if (isset($post -> description)) {		
+				$posts .= '<p>' . $post -> description . '</p>';
+			}
 
-				}
+				
 			} else
 				continue;
 

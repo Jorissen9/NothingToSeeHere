@@ -1,6 +1,6 @@
-<div class="col-sm-6 pull-right" style="margin-top:15px;">
-	<div class="col-md-10 pull-right">
-		<div class="col-md-6 panel-body pull-right" style="margin-bottom: 50px;">
+<div class="col-md-3 pull-right" style="margin-top:15px;">
+	<div class="col-md-10 pull-left">
+		<div class="col-md-12 panel-body pull-right" style="margin-bottom: 50px;">
 			<div class="col-md-12" style="height: 15px;"></div>
 			<form class="navbar-form col-md-12" role="search">
 				<div class="form-group">
@@ -12,8 +12,8 @@
 			</form>
 		</div>
 	</div>
-	<div class="col-md-10 pull-right">
-		<div class="col-md-6 panel-body pull-right">
+	<div class="col-md-12 pull-right">
+		<div class="col-md-12 panel-body pull-right">
 			<h3 class="panel-title pull-left">Follow us on Twitter</h3>
 			<div class="col-md-12" style="height: 15px;"></div>
 			<a class="col-md-12 twitter-timeline" href="https://twitter.com/tedx" height="310" data-widget-id="595952552681807872">Tweets door @TEDxPXL</a>
@@ -33,8 +33,8 @@
 		</div>
 	</div>
 
-	<div class="col-md-10 pull-right">
-		<div class="col-md-6 panel-body pull-right">
+	<div class="col-md-12 pull-right">
+		<div class="col-md-12 panel-body pull-right">
 			<h3 class="panel-title pull-left">Follow us on Facebook</h3>
 			<div class="col-md-12" style="height: 15px;"></div>
 			<script>
