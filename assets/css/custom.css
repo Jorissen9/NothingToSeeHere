@@ -159,6 +159,7 @@ ul.dropdown-menu { /* level 2 */
 }
 
 ul.dropdown-menu ul.dropdown-menu { /* level 3+ */
+	color:#eee;
 	margin-top: -1px;
 	padding-top: 0;
 	left: 149px;
@@ -204,84 +205,6 @@ ul.dropdown-menu > li > a.dropdown {
 	/*display: block; / * show the submenu */
 }
 
-@media all and (max-width: 700px) {
-
-	#navigation {
-		position: static;
-	}
-
-	#menu-toggle {
-		display: block;
-	}
-
-	#main-menu {
-		display: none;
-		float: none;
-	}
-
-	#main-menu li {
-		display: block;
-		margin: 0;
-		padding: 0;
-	}
-
-	#main-menu > li {
-		margin-top: -1px;
-	}
-
-	#main-menu > li:first-child {
-		margin-top: 0;
-	}
-
-	#main-menu > li > a {
-		background-color: #333;
-		border: 1px solid #444;
-		color: #eee;
-		display: block;
-		font-size: 14px;
-		padding: 12px !important;
-		padding: 0;
-	}
-
-	#main-menu li > a:hover {
-		background-color: #444; 
-	}
-
-	#main-menu > li.dropdown {
-		background: none !important;
-		padding: 0;
-	}
-
-	#main-menu > li:hover > a,
-	#main-menu > li.current-menu-item > a
-	#main-menu > li.dropdown > ul.dropdown-menu > li.current-submenu-item > a {
-		border: 1px solid #444 !important;
-		color: #fff !important;
-	}
-
-	ul.dropdown-menu {
-		display: block;
-		margin-top: -1px;
-		margin-left: 20px;
-		position: static;
-		padding: 0;
-		width: inherit;
-	}
-
-	ul.dropdown-menu > li:first-child {
-		border-top: 1px solid #444 !important;
-	}
-
-	ul.dropdown-menu > li > a.dropdown {
-		background: #333 !important;
-	}
-}
-
-/* Login form */
-
-#error-message{
-	color:red;
-}
 
 /* Team Members */
 
