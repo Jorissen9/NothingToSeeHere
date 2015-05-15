@@ -1,5 +1,5 @@
 <div class="col-md-9">
-	<div class="col-md-10 pull-left col-md-offset-1 content">
+	<div  class="col-xs-10 pull-left col-xs-offset-1 content">
 		<br/>
 		<h2>Welcome to TEDxPXL !</h2>
 		<br/>
@@ -18,7 +18,7 @@
 				$posts .= '<h4><a href="' . $post -> link . '">' . $post -> message . '</a></p>';
 			
 			if (isset($post -> picture)) {
-				$posts .= '<p style="line-height:60px;"><img src="' .$post -> full_picture. '" class="fbpicture img-rounded" style="width:504px; text-align:center;" /></p>';
+				$posts .= '<p style="line-height:60px;"><img src="' .$post -> full_picture. '" class="center-block fbpicture img-responsive img-rounded" style="width:504px; text-align:center;" /></p>';
 				
 			}
 
