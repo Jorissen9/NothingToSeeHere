@@ -42,14 +42,14 @@
             	<div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group">
-                            <input value="<?php echo set_value('title'); ?>" type="text" name="title" id="title" class="form-control input-lg" placeholder="Title" tabindex="1" required>
+                            <input value="<?php echo set_value('Title'); ?>" type="text" name="title" id="title" class="form-control input-lg" placeholder="Title" tabindex="1" required>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                   	<div class="col-xs-6 col-sm-6 col-md-6">
                   		<div class="form-group">
-                        	<textarea rows="5" value="<?php echo set_value('description'); ?>" type="text" name="description" id="description" class="form-control input-lg" placeholder="description" tabindex="2" required></textarea>
+                        	<textarea rows="5" value="<?php echo set_value('Description'); ?>" type="text" name="description" id="description" class="form-control input-lg" placeholder="description" tabindex="2" required></textarea>
                        </div>
                     </div>
                 </div>
