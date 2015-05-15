@@ -14,6 +14,7 @@
 
 		<!-- Bootstrap: http://getbootstrap.com/ -->
 		<link href="<?php echo base_url('assets/css/Bootstrap/bootstrap.css') ?>" rel="stylesheet">
+		<link href="<?php echo base_url('assets/js/Bootstrap/bootstrap.min.js') ?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/css/Bootstrap/bootstrap-glyphicons.css') ?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/css/Bootstrap/bootstrap-select.css') ?>" rel="stylesheet">
 		<link href="<?php echo base_url('assets/css/Bootstrap/bootstrap-select.min.css') ?>" rel="stylesheet">

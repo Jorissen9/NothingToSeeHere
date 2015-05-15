@@ -1,6 +1,6 @@
 <header class="head col-xs-12">
 	<a class="logo col-md-4" href="<?php echo base_url('home'); ?>"><img src="<?php echo base_url('assets/imgs/Navigation/logo.png'); ?>" alt="TEDxPXL"></a>
-	<a id="menu-toggle" class="logo" href="#"><i class="icon-reorder"></i></a>
+	<a id="menu-toggle" class="logo" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
 	<nav class="col-md-8" id="navigation">
 		<ul class="col-md-12 " id="main-menu">
 			<li class="col-lg-1 <?php echo($this -> uri -> segment(1) == 'home' || $this -> uri -> segment(1) == '') ? 'current-menu-item' : ''; ?>">
