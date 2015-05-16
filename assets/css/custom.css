@@ -12,7 +12,7 @@ body {
 	background-color: #eee;
 	color: #666;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 12px;
+	font-size: 14px;
 	margin:0px;
 	padding:0px;
 }
@@ -225,8 +225,19 @@ ul.dropdown-menu > li > a.dropdown {
 				height: 10em; 
 				}
 
+
 /* Footer */
 
 .col-lg-12 {
-		background-color: #333333;
-}
+			background-color: #333333;
+		   }
+
+
+/* Images Partners */
+
+tr.position > td {
+	           padding: 70px;
+	           padding-bottom: 10px;
+	           text-align: center;
+	           font-size: 14px;
+			  }

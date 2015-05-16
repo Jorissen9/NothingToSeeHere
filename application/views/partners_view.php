@@ -9,6 +9,52 @@
 			<li class="active">Our Partners</li>
 		</ul>
 		<h2>Our partners</h2>
-		<br/>		   
+		<br/>
+		<p>TEDxPXL is an independently organized TED conference where speakers from around the world share cutting-edge ideas. Without our partners is TEDxPXL nothing.
+			A big thank you to our partners!
+		</p>
+		
+		<table width="500" border="0" cellpadding="5">
+			<tr class="position">
+				<td>
+				<a href="http://www.ted.com"><img src="../assets/imgs/tedx.png" alt="TEDx"></a>
+				<br />
+				<p>TEDx</p>
+				</td>
+
+				<td>
+				<a href="http://www.pxl.be"><img src="../assets/imgs/pxl.png" alt="PXL"></a>
+				<br />
+				<p>Hogeschool PXL</p>
+				</td>
+			
+				<td>
+				<a href="http://www.hasselt.be"><img src="../assets/imgs/hasselt.png" alt="Stad Hasselt"></a>
+				<br />
+				<p>Stad Hasselt</p>
+				</td>
+			</tr>
+			
+			<tr class="position">
+				<td>
+				<a href="http://www.tvl.be"><img src="../assets/imgs/tvl.png" alt="TVL"></a>
+				<br />
+				<p>TV Limburg</p>
+				</td>
+	
+			
+				<td>
+				<a href="http://www.hbvl.be"><img src="../assets/imgs/hbvl.png" alt="HBVL"></a>
+				<br />
+				<p>Het Belang Van Limburg</p>
+				</td>
+
+				<td>
+				<a href="http://www.limburg.be"><img src="../assets/imgs/limburg.png" alt="Provincie Limburg"></a>
+				<br />
+				<p>Provincie Limburg</p>
+				</td>
+			</tr>
+		</table>	   
 	</div>
 </div>
