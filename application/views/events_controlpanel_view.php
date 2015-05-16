@@ -1,9 +1,15 @@
 <!-- This form has been replaced by the vanilla register form, even more secure and reliable ~Kenny -->
-<div id="controlpanel">
+<aside id="controlpanel">
     <div class="col-md-cust1 selected">
         <div class="row">
-            <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-                  <h2 style="margin-bottom:25px;">New Event:</h2>  
+        	<div class="row">
+		        <div class="col-xs-6 col-sm-6 col-md-6">
+		             <input type="button" class="btn btn-block btn-lg" id="AddEventButton" value="Add New Event +">
+		             <br/>
+		        </div>
+		    </div>
+            <div class="col-xs-10 col-sm-6 col-md-4 col-sm-offset-2 col-md-offset-3 pull-right" id="AddEventForm">
+                  <h3 style="margin-bottom:25px;">New Event:</h3>  
                 <?php echo validation_errors('<p class="alert alert-dismissable alert-danger"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'); ?> </p>
                 <?php
 				if ($this -> session -> flashdata('error') != FALSE) {
@@ -63,4 +69,4 @@
             </div>
         </div>
     </div>
-    </div>
+</aside>

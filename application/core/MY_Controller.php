@@ -12,7 +12,7 @@ class MY_Controller extends CI_Controller {
 	if ($Session -> IsValid())
 
 	if (is_object($Session->User))
-		echo '<script>changeHeader();</script>';
+		echo '<script>ChangeHeader();</script>';
 
 	/*
 		$Session = Gdn::Session();

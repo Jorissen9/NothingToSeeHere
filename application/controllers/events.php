@@ -17,11 +17,11 @@ class Events extends MY_Controller {
 		//var_dump($Session -> User);
 
 		// Declare an alias for the user session.
-		// Check if the user session is valid.
-		if ($Session -> IsValid())
-			//echo "The user is logged in!";
-			if (is_object($Session -> User) && $Session -> User -> Admin)
-				$this -> load -> view('events_controlpanel_view');
+		// Check if the user session is valid and Admin.
+		
+		//if ($Session -> IsValid())
+		//	if (is_object($Session -> User) && $Session -> User -> Admin)
+		//		$this -> load -> view('events_controlpanel_view');
 			
 		$this -> load -> view('templates/footer_view');
 

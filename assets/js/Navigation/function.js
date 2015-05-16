@@ -21,56 +21,76 @@ $(document).ready(function() {
 		e.stopPropagation();
 	});
 
- $('.selectpicker').selectpicker({
+	$('.selectpicker').selectpicker({
 
-  });
+	});
+	
+	
+	/* EVENT CONTROL PANEL */
+	
+	$("#AddEventForm").hide();
+
+	$("#AddEventButton").click(function() {
+		
+		var visible = $("#AddEventForm").is(":visible");
+
+		if (visible) {
+			$("#AddEventButton").attr("value", "Add New Event +");
+			$("#AddEventButton").css("color", "#eee");
+		}
+		else
+		{
+			$("#AddEventButton").attr("value", "Add New Event -");
+			$("#AddEventButton").css("color", "#FF2B06");
+		}
+		
+		
+		$("#AddEventForm").slideToggle(500);
+
+	});
+
 });
 
-
-
-function changeHeader()
-{
+function ChangeHeader() {
 	document.getElementById("SignIn").innerHTML = 'Sign Out';
 	document.getElementById("SignIn").setAttribute("href", "forum/#/entry/signout/");
-		
+
 	document.getElementById("SignUp").innerHTML = 'Name';
 }
 
 /*
 $(function(){
 $('#Form_SignIn').click(function() {
-	e.preventDefault();
-	alert("test");
-		$.ajax({
-			
-		url: '/NothingToSeeHere/vanilla/index.php?p=/profile.json',
-		
-  		success: function() {
-  		  	
-			this.changeHeader();
-		}
-		
+e.preventDefault();
+alert("test");
+$.ajax({
 
-		});
-	});  
+url: '/NothingToSeeHere/vanilla/index.php?p=/profile.json',
+
+success: function() {
+
+this.changeHeader();
+}
+
+});
+});
 
 });*/
 ///NothingToSeeHere/vanilla/index.php?p=/entry/passwordrequest
 //http://localhost/NothingToSeeHere/vanilla/index.php?p=/entry/signin
 $(function() {
-$('#Form_User_SignIn').submit(function() {
-$.ajax({
+	$('#Form_User_SignIn').submit(function() {
+		$.ajax({
 
-	url : '/NothingToSeeHere/vanilla/index.php?p=/entry/passwordrequest',
-	success : function() {
-		changeHeader();
+			url : '/NothingToSeeHere/vanilla/index.php?p=/entry/passwordrequest',
+			success : function() {
+				changeHeader();
 
-	},
-	error : function() {
-		alert('failure');
-		// check status && error
-	}
-
+			},
+			error : function() {
+				alert('failure');
+				// check status && error
+			}
 		});
 	});
 });
