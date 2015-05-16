@@ -5,7 +5,7 @@
 			<form class="navbar-form col-md-12" role="search">
 				<div class="form-group">
 					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Search" id="inputGroup" style="width:260px;"/>
+						<input type="text" class="form-control" placeholder="Search" id="inputGroup" style="width:200px;"/>
 						<span class="input-group-addon"> <i class="halflings halflings-menu-hamburger"></i> </span>
 					</div>
 				</div>

@@ -13,6 +13,7 @@
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav" id="main-menu">
+				<li></li>
 				<li class="<?php echo($this -> uri -> segment(1) == 'home' || $this -> uri -> segment(1) == '') ? 'current-menu-item' : ''; ?>">
 					<a href="<?php echo base_url('home'); ?>" title="Home">Home</a>
 				</li>
@@ -52,6 +53,8 @@
 				<li class="<?php echo($this -> uri -> segment(3) == 'registernocaptcha') ? 'current-menu-item' : ''; ?>">
 					<a id="SignUp" href="<?php echo base_url('forum/#/entry/registernocaptcha')?>" title="registernocaptcha">Sign Up</a>
 				</li>
+				<li></li>
+				<li></li>
 			</ul>
 		</div>
 	</div>

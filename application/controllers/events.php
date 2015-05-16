@@ -21,7 +21,7 @@ class Events extends MY_Controller {
 		
 		//if ($Session -> IsValid())
 		//	if (is_object($Session -> User) && $Session -> User -> Admin)
-		//		$this -> load -> view('events_controlpanel_view');
+				$this -> load -> view('events_controlpanel_view');
 			
 		$this -> load -> view('templates/footer_view');
 
