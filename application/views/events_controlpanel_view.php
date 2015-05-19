@@ -46,17 +46,45 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input value="<?php echo set_value('Place'); ?>" type="text" name="place" id="place" class="form-control input-lg" placeholder="Place" tabindex="2" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input value="<?php echo set_value('Zipcode'); ?>" type="number" name="zipcode" id="Zipcode" class="form-control input-lg" placeholder="Zipcode" tabindex="3" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input value="<?php echo set_value('Street'); ?>" type="text" name="street" id="street" class="form-control input-lg" placeholder="Street" tabindex="4" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input value="<?php echo set_value('Number'); ?>" type="number" name="number" id="number" class="form-control input-lg" placeholder="Number" tabindex="5" required>
+                        </div>
+                    </div>
+                </div>
             	<div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <input value="<?php echo set_value('Title'); ?>" type="text" name="title" id="title" class="form-control input-lg" placeholder="Title" tabindex="1" required>
+                            <input value="<?php echo set_value('Title'); ?>" type="text" name="title" id="title" class="form-control input-lg" placeholder="Title" tabindex="6" required>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                   	<div class="col-md-12">
                   		<div class="form-group">
-                        	<textarea rows="5" value="<?php echo set_value('Description'); ?>" type="text" name="description" id="description" class="form-control input-lg" placeholder="description" tabindex="2" required></textarea>
+                        	<textarea rows="5" value="<?php echo set_value('Description'); ?>" type="text" name="description" id="description" class="form-control input-lg" placeholder="description" tabindex="7" required></textarea>
                        </div>
                     </div>
                 </div>
