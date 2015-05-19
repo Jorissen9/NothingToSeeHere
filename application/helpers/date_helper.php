@@ -1,7 +1,6 @@
 <?php
 
-// Data of birth helper for forms.
-// http://tutsforweb.blogspot.be/2012/03/user-friendly-date-with-codeigniter-and.html
+
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 if (!function_exists('generate_options')) {

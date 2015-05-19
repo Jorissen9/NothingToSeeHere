@@ -9,6 +9,7 @@
 		        </div>
 		    </div>
             <div class="col-xs-10 col-sm-6 col-md-4 col-sm-offset-2 col-md-offset-3 pull-right" id="AddEventForm">
+            	<?php echo form_open('events/addevent'); ?>
                   <h3 style="margin-bottom:25px;">New Event:</h3>  
                 <?php echo validation_errors('<p class="alert alert-dismissable alert-danger"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'); ?> </p>
                 <?php
@@ -29,12 +30,12 @@
 
             </p> 
             	<div class="row">
-                  	<div class="col-xs-6 col-sm-6 col-md-6">
-                		<?php $this -> load -> helper('date'); ?>
+                  	<div class="col-xs-6 col-sm-6 col-md-6">              		
 		                <div class="form-group" style="margin-top:20px;">
-			                <select class="selectpicker" data-width="32%" name="day"><option value="0">Day:</option><?php echo generate_options(1, 31) ?></select>
-			                <select class="selectpicker" data-width="32%" name="month"><option value="0">Month:</option><?php echo generate_options(1, 12) ?></select>
-			                <select class="selectpicker" data-width="32%" name="year"><option value="0">Year:</option><?php echo generate_options(date("Y"), date("Y")+10) ?></select>
+		                	<?php $this -> load -> helper('date_helper'); ?>
+			                <select class="selectpicker" data-width="32%" name="date_day"><option value="0">Day:</option><?php echo generate_options(1, 31) ?></select>
+			                <select class="selectpicker" data-width="32%" name="date_month"><option value="0">Month:</option><?php echo generate_options(1, 12) ?></select>
+			                <select class="selectpicker" data-width="32%" name="date_year"><option value="0">Year:</option><?php echo generate_options(date("Y"), date("Y")+10) ?></select>
 		              	</div>
                     </div>
                 </div>
@@ -59,6 +60,7 @@
                        </div>
                     </div>
                 </div>
+                
 	            <div class="row">
 	                <div class="col-xs-6 col-md-6 pull-left form-group">
 	                   <input type="submit" class="btn btn-block btn-lg" value="Create" />
