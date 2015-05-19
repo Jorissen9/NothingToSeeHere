@@ -32,7 +32,7 @@
 				continue;
 
 			$posts .= '</h4><br/>';
-			$posts .= '</div></div>';
+			$posts .= '</div></div></div>';
 
 		}
 
