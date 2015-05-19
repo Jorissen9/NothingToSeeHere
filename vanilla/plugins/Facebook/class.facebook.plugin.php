@@ -537,7 +537,7 @@ class FacebookPlugin extends Gdn_Plugin {
 
    public function AuthorizeUri($Query = FALSE, $RedirectUri = FALSE) {
       $AppID = C('Plugins.Facebook.ApplicationID');
-      $FBScope = C('Plugins.Facebook.Scope', Array('email','publish_stream'));
+      $FBScope = C('Plugins.Facebook.Scope', Array('email','publish_actions'));
 
       if (!$RedirectUri)
          $RedirectUri = $this->RedirectUri();
