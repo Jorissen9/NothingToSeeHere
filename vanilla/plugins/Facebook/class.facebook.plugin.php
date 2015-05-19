@@ -11,8 +11,8 @@ Contact Vanilla Forums Inc. at support [at] vanillaforums [dot] com
 // Define the plugin:
 $PluginInfo['Facebook'] = array(
 	'Name' => 'Facebook Social Connect',
-   'Description' => 'Users may sign into your site using their Facebook account.',	
-   'Version' => '1.0.9',
+   'Description' => 'Users may sign into your site using their Facebook account.',
+   'Version' => '1.2.0',
    'RequiredApplications' => array('Vanilla' => '2.0.14a'),
    'RequiredTheme' => FALSE,
    'RequiredPlugins' => FALSE,
@@ -31,20 +31,22 @@ $PluginInfo['Facebook'] = array(
 
 class FacebookPlugin extends Gdn_Plugin {
    const ProviderKey = 'Facebook';
-   
+
    protected $_AccessToken = NULL;
-   
+
    public function AccessToken() {
-      if (!$this->IsConfigured()) 
+      if (!$this->IsConfigured()) {
          return FALSE;
-      
-      if ($this->_AccessToken === NULL) {
-         if (Gdn::Session()->IsValid())
-            $this->_AccessToken = GetValueR(self::ProviderKey.'.AccessToken', Gdn::Session()->User->Attributes);
-         else
-            $this->_AccessToken = FALSE;
       }
-      
+
+      if ($this->_AccessToken === NULL) {
+         if (Gdn::Session()->IsValid()) {
+            $this->_AccessToken = GetValueR(self::ProviderKey.'.AccessToken', Gdn::Session()->User->Attributes);
+         } else {
+            $this->_AccessToken = FALSE;
+         }
+      }
+
       return $this->_AccessToken;
    }
 
@@ -52,21 +54,22 @@ class FacebookPlugin extends Gdn_Plugin {
       $Uri = $this->AuthorizeUri($Query);
       Redirect($Uri);
    }
-   
+
    public function API($Path, $Post = FALSE) {
       // Build the url.
       $Url = 'https://graph.facebook.com/'.ltrim($Path, '/');
-      
       $AccessToken = $this->AccessToken();
-      if (!$AccessToken)
+      if (!$AccessToken) {
          throw new Gdn_UserException("You don't have a valid Facebook connection.");
-      
-      if (strpos($Url, '?') === false)
-         $Url .= '?';
-      else
-         $Url .= '&';
-      $Url .= 'access_token='.urlencode($AccessToken);
+      }
 
+      if (strpos($Url, '?') === false) {
+         $Url .= '?';
+      } else {
+         $Url .= '&';
+      }
+
+      $Url .= 'access_token='.urlencode($AccessToken);
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_HEADER, false);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -75,7 +78,7 @@ class FacebookPlugin extends Gdn_Plugin {
 
       if ($Post !== false) {
          curl_setopt($ch, CURLOPT_POST, true);
-         curl_setopt($ch, CURLOPT_POSTFIELDS, $Post); 
+         curl_setopt($ch, CURLOPT_POSTFIELDS, $Post);
          Trace("  POST $Url");
       } else {
          Trace("  GET  $Url");
@@ -86,144 +89,130 @@ class FacebookPlugin extends Gdn_Plugin {
       $HttpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
       $ContentType = curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
       curl_close($ch);
-      
+
       Gdn::Controller()->SetJson('Type', $ContentType);
 
       if (strpos($ContentType, 'javascript') !== FALSE) {
          $Result = json_decode($Response, TRUE);
-         
+
          if (isset($Result['error'])) {
             Gdn::Dispatcher()->PassData('FacebookResponse', $Result);
             throw new Gdn_UserException($Result['error']['message']);
          }
-      } else
+      } else {
          $Result = $Response;
+      }
 
       return $Result;
    }
-
-//   public function AuthenticationController_Render_Before($Sender, $Args) {
-//      if (isset($Sender->ChooserList)) {
-//         $Sender->ChooserList['facebook'] = 'Facebook';
-//      }
-//      if (is_array($Sender->Data('AuthenticationConfigureList'))) {
-//         $List = $Sender->Data('AuthenticationConfigureList');
-//         $List['facebook'] = '/dashboard/settings/facebook';
-//         $Sender->SetData('AuthenticationConfigureList', $List);
-//      }
-//   }
 
    /**
     *
     * @param Gdn_Controller $Sender
     */
    public function EntryController_SignIn_Handler($Sender, $Args) {
-      if (!$this->IsConfigured())
+      if (!$this->SocialSignIn()) {
          return;
-      
+      }
+
       if (isset($Sender->Data['Methods'])) {
-         $ImgSrc = Asset('/plugins/Facebook/design/facebook-login.png');
-         $ImgAlt = T('Sign In with Facebook');
+         $Url = $this->AuthorizeUri();
 
-//         if ($AccessToken) {
-//            $SigninHref = $this->RedirectUri();
-//
-//            // We already have an access token so we can just link to the connect page.
-//            $FbMethod = array(
-//                'Name' => 'Facebook',
-//                'SignInHtml' => "<a id=\"FacebookAuth\" href=\"$SigninHref\" class=\"PopLink\" ><img src=\"$ImgSrc\" alt=\"$ImgAlt\" /></a>");
-//         } else {
-            $SigninHref = $this->AuthorizeUri();
-            $PopupSigninHref = $this->AuthorizeUri('display=popup');
-
-            // Add the facebook method to the controller.
-            $FbMethod = array(
-               'Name' => self::ProviderKey,
-               'SignInHtml' => "<a id=\"FacebookAuth\" href=\"$SigninHref\" class=\"PopupWindow\" popupHref=\"$PopupSigninHref\" popupHeight=\"326\" popupWidth=\"627\" rel=\"nofollow\" ><img src=\"$ImgSrc\" alt=\"$ImgAlt\" /></a>");
-//         }
+         // Add the facebook method to the controller.
+         $FbMethod = array(
+            'Name' => self::ProviderKey,
+            'SignInHtml' => SocialSigninButton('Facebook', $Url, 'button')
+         );
 
          $Sender->Data['Methods'][] = $FbMethod;
       }
    }
-   
+
    /**
     * Add 'Facebook' option to the row.
     */
    public function Base_AfterReactions_Handler($Sender, $Args) {
-      if (!$this->SocialReactions()) 
+      if (!$this->SocialReactions()) {
          return;
-      
+      }
+
       echo Gdn_Theme::BulletItem('Share');
       $this->AddReactButton($Sender, $Args);
    }
-   
+
    public function Base_DiscussionFormOptions_Handler($Sender, $Args) {
-      if (!$this->SocialSharing()) 
+      if (!$this->SocialSharing()) {
          return;
-      
-      if (!$this->AccessToken())
+      }
+
+      if (!$this->AccessToken()) {
          return;
-      
+      }
+
       $Options =& $Args['Options'];
-      
+
       $Options .= ' <li>'.
          $Sender->Form->CheckBox('ShareFacebook', '@'.Sprite('ReactFacebook', 'ReactSprite'), array('value' => '1', 'title' => sprintf(T('Share to %s.'), 'Facebook'))).
          '</li> ';
    }
-   
+
    public function DiscussionController_AfterBodyField_Handler($Sender, $Args) {
-      if (!$this->SocialSharing()) 
+      if (!$this->SocialSharing()) {
          return;
-      
-      if (!$this->AccessToken())
+      }
+
+      if (!$this->AccessToken()) {
          return;
-      
+      }
+
       echo ' '.
          $Sender->Form->CheckBox('ShareFacebook', '@'.Sprite('ReactFacebook', 'ReactSprite'), array('value' => '1', 'title' => sprintf(T('Share to %s.'), 'Facebook'))).
          ' ';
    }
-   
+
    public function DiscussionModel_AfterSaveDiscussion_Handler($Sender, $Args) {
-      if (!$this->SocialSharing()) 
+      if (!$this->SocialSharing()) {
          return;
-      
-      if (!$this->AccessToken())
+      }
+
+      if (!$this->AccessToken()) {
          return;
-      
+      }
+
       $ShareFacebook = GetValueR('FormPostValues.ShareFacebook', $Args);
-      
+
       if ($ShareFacebook) {
          $Url = DiscussionUrl($Args['Fields'], '', TRUE);
-//         $Message = SliceParagraph(Gdn_Format::PlainText($Row['Body'], $Row['Format']), 160);
-         
+
          if ($this->AccessToken()) {
-            $R = $this->API('/me/feed', array(
-                'link' => $Url
-                ));
+            $R = $this->API('/me/feed', array('link' => $Url));
          }
       }
    }
-   
+
    public function CommentModel_AfterSaveComment_Handler($Sender, $Args) {
-      if (!$this->SocialSharing()) 
+      if (!$this->SocialSharing()) {
          return;
-      
-      if (!$this->AccessToken())
+      }
+
+      if (!$this->AccessToken()) {
          return;
-      
+      }
+
       $ShareFacebook = GetValueR('FormPostValues.ShareFacebook', $Args);
-      
+
       if ($ShareFacebook) {
          $Row = $Args['FormPostValues'];
-         
+
          $DiscussionModel = new DiscussionModel();
          $Discussion = $DiscussionModel->GetID(GetValue('DiscussionID', $Row));
-         if (!$Discussion)
+         if (!$Discussion) {
             die('no discussion');
-         
+         }
+
          $Url = DiscussionUrl($Discussion, '', TRUE);
          $Message = SliceParagraph(Gdn_Format::PlainText($Row['Body'], $Row['Format']), 160);
-         
+
          if ($this->AccessToken()) {
             $R = $this->API('/me/feed', array(
                 'link' => $Url,
@@ -242,38 +231,39 @@ class FacebookPlugin extends Gdn_Plugin {
       } else {
          $CssClass = 'ReactButton PopupWindow';
       }
-      
-      echo ' '.Anchor(Sprite('ReactFacebook', 'ReactSprite'), Url("post/facebook/{$Args['RecordType']}?id={$Args['RecordID']}", TRUE), $CssClass).' ';
+
+      echo ' '.Anchor(Sprite('ReactFacebook', 'Sprite ReactSprite', T('Share on Facebook')), Url("post/facebook/{$Args['RecordType']}?id={$Args['RecordID']}", TRUE), $CssClass).' ';
    }
-   
+
    public function Base_SignInIcons_Handler($Sender, $Args) {
-      if (!$this->IsConfigured())
+      if (!$this->SocialSignIn()) {
          return;
-		
+      }
+
 		echo "\n".$this->_GetButton();
    }
 
    public function Base_BeforeSignInButton_Handler($Sender, $Args) {
-      if (!$this->IsConfigured())
+      if (!$this->SocialSignIn()) {
          return;
-		
+      }
+
 		echo "\n".$this->_GetButton();
 	}
-	
-	public function Base_BeforeSignInLink_Handler($Sender) {
-      if (!$this->IsConfigured())
-			return;
-		
-		// if (!IsMobile())
-		// 	return;
 
-		if (!Gdn::Session()->IsValid())
+	public function Base_BeforeSignInLink_Handler($Sender) {
+      if (!$this->SocialSignIn()) {
+			return;
+      }
+
+		if (!Gdn::Session()->IsValid()) {
 			echo "\n".Wrap($this->_GetButton(), 'li', array('class' => 'Connect FacebookConnect'));
+      }
 	}
-   
+
    public function Base_GetConnections_Handler($Sender, $Args) {
       $Profile = GetValueR('User.Attributes.'.self::ProviderKey.'.Profile', $Args);
-      
+
       $Sender->Data["Connections"][self::ProviderKey] = array(
          'Icon' => $this->GetWebResource('icon.png', '/'),
          'Name' => 'Facebook',
@@ -285,55 +275,48 @@ class FacebookPlugin extends Gdn_Plugin {
             )
       );
    }
-   
+
    /**
-    * 
+    *
     * @param PostController $Sender
     * @param type $RecordType
     * @param type $ID
     * @throws type
     */
    public function PostController_Facebook_Create($Sender, $RecordType, $ID) {
-      if (!$this->SocialReactions()) 
+      if (!$this->SocialReactions()) {
          throw PermissionException();
-            
-//      if (!Gdn::Request()->IsPostBack())
-//         throw PermissionException('Javascript');
-      
-      $Row = GetRecord($RecordType, $ID);
+      }
+
+      $Row = GetRecord($RecordType, $ID, TRUE);
       if ($Row) {
          $Message = SliceParagraph(Gdn_Format::PlainText($Row['Body'], $Row['Format']), 160);
-         
+
          if ($this->AccessToken() && $Sender->Request->IsPostBack()) {
-            $R = $this->API('/me/feed', array(
-                'link' => $Row['ShareUrl'],
-                'message' => $Message
-                ));
+            $R = $this->API('/me/feed', array('link' => $Row['ShareUrl'], 'message' => $Message));
 
             $Sender->SetJson('R', $R);
             $Sender->InformMessage(T('Thanks for sharing!'));
          } else {
-//            http://www.facebook.com/dialog/feed?app_id=231546166870342&redirect_uri=http%3A%2F%2Fvanillicon.com%2Fredirect%2Ffacebook%3Fhash%3Daad66afb13105676dffa79bfe2b8595f&link=http%3A%2F%2Fvanillicon.com&picture=http%3A%2F%2Fvanillicon.com%2Faad66afb13105676dffa79bfe2b8595f.png&name=Vanillicon&caption=What%27s+Your+Vanillicon+Look+Like%3F&description=Vanillicons+are+unique+avatars+generated+by+your+name+or+email+that+are+free+to+make+%26+use+around+the+web.+Create+yours+now%21
             $Get = array(
                   'app_id' => C('Plugins.Facebook.ApplicationID'),
                   'link' => $Row['ShareUrl'],
                   'name' => Gdn_Format::PlainText($Row['Name'], 'Text'),
-//                  'caption' => 'Foo',
                   'description' => $Message,
                   'redirect_uri' => Url('/post/shared/facebook', TRUE)
                 );
-            
+
             $Url = 'http://www.facebook.com/dialog/feed?'.http_build_query($Get);
             Redirect($Url);
          }
       }
-      
+
       $Sender->Render('Blank', 'Utility', 'Dashboard');
    }
-   
+
    /**
-    * 
-    * 
+    *
+    *
     * @param ProfileController $Sender
     * @param type $UserReference
     * @param type $Username
@@ -341,44 +324,42 @@ class FacebookPlugin extends Gdn_Plugin {
     */
    public function ProfileController_FacebookConnect_Create($Sender, $UserReference, $Username, $Code = FALSE) {
       $Sender->Permission('Garden.SignIn.Allow');
-      
+
       $Sender->GetUserInfo($UserReference, $Username, '', TRUE);
       $Sender->_SetBreadcrumbs(T('Connections'), '/profile/connections');
-      
+
       // Get the access token.
       $AccessToken = $this->GetAccessToken($Code, self::ProfileConnecUrl());
-      
+
       // Get the profile.
       $Profile = $this->GetProfile($AccessToken);
-      
+
       // Save the authentication.
       Gdn::UserModel()->SaveAuthentication(array(
          'UserID' => $Sender->User->UserID,
          'Provider' => self::ProviderKey,
          'UniqueID' => $Profile['id']));
-      
+
       // Save the information as attributes.
       $Attributes = array(
           'AccessToken' => $AccessToken,
           'Profile' => $Profile
       );
       Gdn::UserModel()->SaveAttribute($Sender->User->UserID, self::ProviderKey, $Attributes);
-      
+
       $this->EventArguments['Provider'] = self::ProviderKey;
       $this->EventArguments['User'] = $Sender->User;
       $this->FireEvent('AfterConnection');
-      
+
       Redirect(UserUrl($Sender->User, '', 'connections'));
    }
-	
+
 	private function _GetButton() {
-      $ImgSrc = Asset('/plugins/Facebook/design/facebook-icon.png');
-      $ImgAlt = T('Sign In with Facebook');
-      $SigninHref = $this->AuthorizeUri();
-      $PopupSigninHref = $this->AuthorizeUri('display=popup');
-      return "<a id=\"FacebookAuth\" href=\"$SigninHref\" class=\"PopupWindow\" title=\"$ImgAlt\" popupHref=\"$PopupSigninHref\" popupHeight=\"326\" popupWidth=\"627\" rel=\"nofollow\" ><img src=\"$ImgSrc\" alt=\"$ImgAlt\" align=\"bottom\" /></a>";
+      $Url = $this->AuthorizeUri();
+
+      return SocialSigninButton('Facebook', $Url, 'icon');
    }
-	
+
    public function SocialController_Facebook_Create($Sender, $Args) {
       $Sender->Permission('Garden.Settings.Manage');
       if ($Sender->Form->AuthenticatedPostBack()) {
@@ -386,6 +367,7 @@ class FacebookPlugin extends Gdn_Plugin {
              'Plugins.Facebook.ApplicationID' => $Sender->Form->GetFormValue('ApplicationID'),
              'Plugins.Facebook.Secret' => $Sender->Form->GetFormValue('Secret'),
              'Plugins.Facebook.UseFacebookNames' => $Sender->Form->GetFormValue('UseFacebookNames'),
+             'Plugins.Facebook.SocialSignIn' => $Sender->Form->GetFormValue('SocialSignIn'),
              'Plugins.Facebook.SocialReactions' => $Sender->Form->GetFormValue('SocialReactions'),
              'Plugins.Facebook.SocialSharing' => $Sender->Form->GetFormValue('SocialSharing'),
              'Garden.Registration.SendConnectEmail' => $Sender->Form->GetFormValue('SendConnectEmail'));
@@ -397,7 +379,8 @@ class FacebookPlugin extends Gdn_Plugin {
          $Sender->Form->SetValue('ApplicationID', C('Plugins.Facebook.ApplicationID'));
          $Sender->Form->SetValue('Secret', C('Plugins.Facebook.Secret'));
          $Sender->Form->SetValue('UseFacebookNames', C('Plugins.Facebook.UseFacebookNames'));
-         $Sender->Form->SetValue('SendConnectEmail', C('Garden.Registration.SendConnectEmail', TRUE));
+         $Sender->Form->SetValue('SendConnectEmail', C('Garden.Registration.SendConnectEmail', FALSE));
+         $Sender->Form->SetValue('SocialSignIn', C('Plugins.Facebook.SocialSignIn', TRUE));
          $Sender->Form->SetValue('SocialReactions', $this->SocialReactions());
          $Sender->Form->SetValue('SocialSharing', $this->SocialSharing());
       }
@@ -413,8 +396,9 @@ class FacebookPlugin extends Gdn_Plugin {
     * @param array $Args
     */
    public function Base_ConnectData_Handler($Sender, $Args) {
-      if (GetValue(0, $Args) != 'facebook')
+      if (GetValue(0, $Args) != 'facebook') {
          return;
+      }
 
       if (isset($_GET['error'])) {
          throw new Gdn_UserException(GetValue('error_description', $_GET, T('There was an error connecting to Facebook')));
@@ -424,18 +408,19 @@ class FacebookPlugin extends Gdn_Plugin {
       $Secret = C('Plugins.Facebook.Secret');
       $Code = GetValue('code', $_GET);
       $Query = '';
-      if ($Sender->Request->Get('display'))
+      if ($Sender->Request->Get('display')) {
          $Query = 'display='.urlencode($Sender->Request->Get('display'));
+      }
 
       $RedirectUri = ConcatSep('&', $this->RedirectUri(), $Query);
-      
+
       $AccessToken = $Sender->Form->GetFormValue('AccessToken');
-      
+
       // Get the access token.
       if (!$AccessToken && $Code) {
          // Exchange the token for an access token.
          $Code = urlencode($Code);
-         
+
          $AccessToken = $this->GetAccessToken($Code, $RedirectUri);
 
          $NewToken = TRUE;
@@ -468,7 +453,7 @@ class FacebookPlugin extends Gdn_Plugin {
       $Form->SetFormValue('Email', GetValue('email', $Profile));
       $Form->SetFormValue('Photo', "//graph.facebook.com/{$ID}/picture?type=large");
       $Form->AddHidden('AccessToken', $AccessToken);
-      
+
       if (C('Plugins.Facebook.UseFacebookNames')) {
          $Form->SetFormValue('Name', GetValue('name', $Profile));
          SaveToConfig(array(
@@ -477,7 +462,7 @@ class FacebookPlugin extends Gdn_Plugin {
              'Garden.Registration.NameUnique' => FALSE
          ), '', FALSE);
       }
-      
+
       // Save some original data in the attributes of the connection for later API calls.
       $Attributes = array();
       $Attributes[self::ProviderKey] = array(
@@ -485,19 +470,19 @@ class FacebookPlugin extends Gdn_Plugin {
           'Profile' => $Profile
       );
       $Form->SetFormValue('Attributes', $Attributes);
-      
+
       $Sender->SetData('Verified', TRUE);
    }
-   
+
    protected function GetAccessToken($Code, $RedirectUri, $ThrowError = TRUE) {
       $Get = array(
           'client_id' => C('Plugins.Facebook.ApplicationID'),
           'client_secret' => C('Plugins.Facebook.Secret'),
           'code' => $Code,
           'redirect_uri' => $RedirectUri);
-      
+
       $Url = 'https://graph.facebook.com/oauth/access_token?'.http_build_query($Get);
-      
+
       // Get the redirect URI.
       $C = curl_init();
       curl_setopt($C, CURLOPT_RETURNTRANSFER, TRUE);
@@ -518,7 +503,6 @@ class FacebookPlugin extends Gdn_Plugin {
 
       $AccessToken = GetValue('access_token', $Tokens);
 //      $Expires = GetValue('expires', $Tokens, NULL);
-      
       return $AccessToken;
    }
 
@@ -537,27 +521,39 @@ class FacebookPlugin extends Gdn_Plugin {
 
    public function AuthorizeUri($Query = FALSE, $RedirectUri = FALSE) {
       $AppID = C('Plugins.Facebook.ApplicationID');
-      $FBScope = C('Plugins.Facebook.Scope', Array('email','publish_actions'));
+      $FBScope = C('Plugins.Facebook.Scope', 'email,publish_actions');
 
-      if (!$RedirectUri)
+      if(is_array($FBScope)) {
+         $Scopes = implode(',', $FBScope);
+      } else {
+         $Scopes = $FBScope;
+      }
+
+      if (!$RedirectUri) {
          $RedirectUri = $this->RedirectUri();
-      if ($Query)
+      }
+
+      if ($Query) {
          $RedirectUri .= '&'.$Query;
+      }
+
       $RedirectUri = urlencode($RedirectUri);
 
-      $Scopes = implode(',', $FBScope);
       $SigninHref = "https://graph.facebook.com/oauth/authorize?client_id=$AppID&redirect_uri=$RedirectUri&scope=$Scopes";
-      if ($Query)
-         $SigninHref .= '&'.$Query;
+
+      if ($Query) {
+         $SigninHref .= '&' . $Query;
+      }
+
       return $SigninHref;
    }
 
    protected $_RedirectUri = NULL;
 
    public function RedirectUri($NewValue = NULL) {
-      if ($NewValue !== NULL)
+      if ($NewValue !== NULL) {
          $this->_RedirectUri = $NewValue;
-      elseif ($this->_RedirectUri === NULL) {
+      } elseif ($this->_RedirectUri === NULL) {
          $RedirectUri = Url('/entry/connect/facebook', TRUE);
          if (strpos($RedirectUri, '=') !== FALSE) {
             $p = strrchr($RedirectUri, '=');
@@ -569,19 +565,21 @@ class FacebookPlugin extends Gdn_Plugin {
          $Path = Gdn::Request()->Path();
 
          $Target = GetValue('Target', $_GET, $Path ? $Path : '/');
-         if (ltrim($Target, '/') == 'entry/signin' || empty($Target))
-            $Target = '/';
-         $Args = array('Target' => $Target);
 
+         if (ltrim($Target, '/') == 'entry/signin' || empty($Target)) {
+            $Target = '/';
+         }
+
+         $Args = array('Target' => $Target);
 
          $RedirectUri .= strpos($RedirectUri, '?') === FALSE ? '?' : '&';
          $RedirectUri .= http_build_query($Args);
          $this->_RedirectUri = $RedirectUri;
       }
-      
+
       return $this->_RedirectUri;
    }
-   
+
    public static function ProfileConnecUrl() {
       return Url(UserUrl(Gdn::Session()->User, FALSE, 'facebookconnect'), TRUE);
    }
@@ -589,25 +587,35 @@ class FacebookPlugin extends Gdn_Plugin {
    public function IsConfigured() {
       $AppID = C('Plugins.Facebook.ApplicationID');
       $Secret = C('Plugins.Facebook.Secret');
-      if (!$AppID || !$Secret)
+
+      if (!$AppID || !$Secret) {
          return FALSE;
+      }
+
       return TRUE;
    }
-   
+
+   public function SocialSignIn() {
+      return C('Plugins.Facebook.SocialSignIn', TRUE) && $this->IsConfigured();
+   }
+
    public function SocialSharing() {
       return C('Plugins.Facebook.SocialSharing', TRUE) && $this->IsConfigured();
    }
-   
+
    public function SocialReactions() {
       return C('Plugins.Facebook.SocialReactions', TRUE) && $this->IsConfigured();
    }
-   
+
    public function Setup() {
       $Error = '';
-      if (!function_exists('curl_init'))
+      if (!function_exists('curl_init')) {
          $Error = ConcatSep("\n", $Error, 'This plugin requires curl.');
-      if ($Error)
+      }
+
+      if ($Error) {
          throw new Gdn_UserException($Error, 400);
+      }
 
       $this->Structure();
    }
