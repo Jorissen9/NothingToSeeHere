@@ -52,8 +52,8 @@ class Events extends MY_Controller {
 			$config['upload_path'] = './assets/imgs/Events/';
 			$config['allowed_types'] = 'gif|jpg|png';
 			$config['max_size']	= '4000';
-			$config['max_width']  = '1024';
-			$config['max_height']  = '1024';
+			$config['max_width']  = '4096';
+			$config['max_height']  = '4096';
 		    $config['encrypt_name'] = true;
 	
 			$this->load->library('upload', $config);

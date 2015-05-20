@@ -15,7 +15,7 @@ $(document).ready(function() {
 		}
 	});
 
-	/* LOGIN MENU */
+	/* LOGIN MENU (deprecated)*/
 
 	$('.dropdown-menu').find('form').click(function(e) {
 		e.stopPropagation();
@@ -24,7 +24,6 @@ $(document).ready(function() {
 	$('.selectpicker').selectpicker({
 
 	});
-	
 
 	/* EVENT CONTROL PANEL */
 
@@ -46,6 +45,28 @@ $(document).ready(function() {
 
 	});
 
+	$(document).on('change', '.btn-file :file', function() {
+		var input = $(this),
+		    numFiles = input.get(0).files ? input.get(0).files.length : 1,
+		    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+		input.trigger('fileselect', [numFiles, label]);
+	});
+
+	$('.btn-file :file').on('fileselect', function(event, numFiles, label) {
+
+		var input = $(this).parents('.input-group').find(':text'),
+		    log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+		$('#browse').html(label);
+
+		if (input.length) {
+			input.val(log);
+		} else {
+			if (log)
+				alert(log);
+		}
+
+	});
 
 });
 
@@ -56,54 +77,3 @@ function ChangeHeader() {
 	document.getElementById("SignUp").innerHTML = 'Name';
 }
 
-/*
-$(function(){
-$('#Form_SignIn').click(function() {
-e.preventDefault();
-alert("test");
-$.ajax({
-
-url: '/NothingToSeeHere/vanilla/index.php?p=/profile.json',
-
-success: function() {
-
-this.changeHeader();
-}
-
-});
-});
-
-});*/
-///NothingToSeeHere/vanilla/index.php?p=/entry/passwordrequest
-//http://localhost/NothingToSeeHere/vanilla/index.php?p=/entry/signin
-$(function() {
-	$('#Form_User_SignIn').submit(function() {
-		$.ajax({
-
-			url : '/NothingToSeeHere/vanilla/index.php?p=/entry/passwordrequest',
-			success : function() {
-				changeHeader();
-
-			},
-			error : function() {
-				alert('failure');
-				// check status && error
-			}
-		});
-	});
-});
-/*
-
- $.ajax({
- url:'http://localhost/NothingToSeeHere/vanilla/applications/dashboard/js/profile.js',
- dataType: 'json',
- async: false,
- cache: false,
- success: function(profile) {
- if (profile) {
- alert("WIN");
- } else {
- alert("LOSS");
- }
- }
- });*/
