@@ -1,4 +1,6 @@
 <?php
+//var_dump($events);
+
 foreach ($events as $row) {
 			$posts = "";
 			$posts.= '<div class="col-xs-9 content"> <div class="col-xs-9 col-xs-offset-3" style="background-color: #F5F5F5; text-align:center; border-radius: 25px;">';
@@ -18,4 +20,5 @@ foreach ($events as $row) {
 			
 			echo $posts;
 		}
+
 ?>

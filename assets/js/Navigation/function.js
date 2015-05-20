@@ -25,29 +25,32 @@ $(document).ready(function() {
 
 	});
 	
-	
+	//Google map locationpicker for events
+
+	$('#fuckEmUp').locationpicker({
+
+	});
+
 	/* EVENT CONTROL PANEL */
-	
+
 	$("#AddEventForm").hide();
 
 	$("#AddEventButton").click(function() {
-		
+
 		var visible = $("#AddEventForm").is(":visible");
 
 		if (visible) {
 			$("#AddEventButton").attr("value", "Add New Event +");
 			$("#AddEventButton").css("color", "#eee");
-		}
-		else
-		{
+		} else {
 			$("#AddEventButton").attr("value", "Add New Event -");
 			$("#AddEventButton").css("color", "#FF2B06");
 		}
-		
-		
+
 		$("#AddEventForm").slideToggle(500);
 
 	});
+
 
 });
 
