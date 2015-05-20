@@ -8,6 +8,39 @@ html,body{
     height: 100%
 }
 
+.title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  background: #000;
+  background-color: rgba(0,0,0,.65);
+  padding: 1% 2%;
+  width: 100%;
+  color: #fff;
+  font-size: 1.467em;
+}
+
+.more {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  background: #000;
+  background-color: rgba(0,0,0,.65);
+  padding: 2%;
+  color: #fff;
+  font-size: 1.733em;
+}
+
+a.overview {
+  display: block;
+  zoom: 1;
+  position: relative;
+  height: 195px;
+}
 
 body {
 	background-color: #eee;

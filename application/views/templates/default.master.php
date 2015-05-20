@@ -27,7 +27,14 @@
 		<script type="text/javascript" src="<?php echo base_url('assets/js/Bootstrap/bootstrap.js')?>"></script>
 		<script type="text/javascript" src="<?php echo base_url('assets/js/Bootstrap/bootstrap-select.js')?>"></script>
 		<script type="text/javascript" src="<?php echo base_url('assets/js/Bootstrap/npm.js')?>"></script>
+		
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false&libraries=places'></script>
+		<script src="./assets/js/Locationpicker/locationpicker.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
 		<script src='https://www.google.com/recaptcha/api.js'></script>
+		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+	    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
 
 	</head>
 	<body></body>

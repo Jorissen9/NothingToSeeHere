@@ -8,7 +8,7 @@
 
 		foreach ($fbdata -> data as $post) {
 			$posts = "";
-			$posts .= '<div class="col-xs-12 content"><div class="class="col-xs-7 col-xs-offset-3"" style="background-color: #F5F5F5; text-align:center; border-radius: 25px;">';
+			$posts .= '<div class="col-xs-12 content"><div class="col-xs-7 col-xs-offset-3" style="background-color: #F5F5F5; text-align:center; border-radius: 25px;">';
 			$fbTime = strtotime($post -> created_time);
 			$myTime = date("d M Y h:ia", $fbTime);
 

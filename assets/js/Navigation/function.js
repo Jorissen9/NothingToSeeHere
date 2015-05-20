@@ -25,11 +25,6 @@ $(document).ready(function() {
 
 	});
 	
-	//Google map locationpicker for events
-
-	$('#fuckEmUp').locationpicker({
-
-	});
 
 	/* EVENT CONTROL PANEL */
 

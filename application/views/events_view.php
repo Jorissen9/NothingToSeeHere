@@ -2,31 +2,29 @@
 	<div  class="col-xs-10 pull-left col-xs-offset-1 content">
 		<?php
 		var_dump($events);
-
+		
+		$posts = '<ol>';
 		foreach ($events as $row) {
-			$posts = "";
-			if (isset($row -> Picture)) {
-				$posts .= '<a href="#"><div class="col-xs-12 content" style=""> <div class="col-xs-12" style="background-color: #F5F5F5; background-image: url(./assets/imgs/' . $row -> Picture . '); text-align:center; border-radius: 25px;">';
-			} else {
-				$posts .= '<a href="#"><div class="col-xs-12 content"><div class="col-xs-12" style="background-color: #F5F5F5; text-align:center; border-radius: 25px;">';
+				
+			$posts .= '<li class="col-xs-12 content"><a class="overview" href="#">';
+			
+			if ($row -> Picture != "")
+			{
+				$posts .= '<img typeof="foaf:Image" src="./assets/imgs/' . $row -> Picture . '">';
 			}
 
-			if (isset($row -> Title)) {
-				$posts .= '<a><h1>' . $row -> Title . '</h2></a><br />';
-			}
-			if (isset($row -> Date)) {
-				if (isset($row -> Time)) {
-					$posts .= '<h5>When?</h5><h3>' . $row -> Date . ' at ' . $row -> Time . '</h3><br />';
-				}
-			}
-			if (isset($row -> Description)) {
-				$posts .= '<h5>What?</h5><h3>' . $row -> Description . '</h3>';
-			}
+			$posts .= '<h4 class="title">' . date('M', $row -> Date) . ' ' . date('d', $row -> Date) . ' at ' . date('g:i a', strtotime($row -> Time)) . ' - ' . $row -> Title . '<h4>';
 
-			$posts .= '<br/>	</div></a></div>';
-
-			echo $posts;
+			//$posts .= '<h5>What?</h5><h3>' . $row -> Description . '</h3>';
+			
+			$posts .= '<span class="more">Learn more</span>';
+			$posts .= '</a></li>';
+			
 		}
+		
+		$posts .= '</ol>';
+		echo $posts;
+		
 	?>
 	</div>
 </div>

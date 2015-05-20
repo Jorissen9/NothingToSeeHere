@@ -13,9 +13,6 @@ class Events extends MY_Controller {
 		$this -> load -> model('events_model');
 		$data["events"] = $this -> events_model -> getEvents();
 
-		$this -> load -> view('templates/navigation_view');
-		$this -> load -> view('events_view',$data);
-
 		$Session = Gdn::Session();
 		//var_dump($Session -> User);
 
@@ -24,9 +21,8 @@ class Events extends MY_Controller {
 
 		//if ($Session -> IsValid())
 		//	if (is_object($Session -> User) && $Session -> User -> Admin)
-		$this -> load -> view('events_controlpanel_view');
+		$this -> load -> adminpanel('events_view', $data);
 
-		$this -> load -> view('templates/footer_view');
 
 	}
 
@@ -37,19 +33,19 @@ class Events extends MY_Controller {
 		$this -> load -> model('events_model');
 		$this -> form_validation -> set_rules('date', 'Date', 'callback_date_check');
 		$this -> form_validation -> set_rules('title', 'Title', 'trim|required|min_length[2]|max_length[45]|xss_clean');
-		$this -> form_validation -> set_rules('street', 'Street', 'trim|min_length[2]|max_length[45]|xss_clean');
-		$this -> form_validation -> set_rules('number', 'Number', 'trim|min_length[1]|xss_clean');
-		$this -> form_validation -> set_rules('place', 'Place', 'trim|min_length[2]|max_length[45]|xss_clean');
-		$this -> form_validation -> set_rules('zipcode', 'Zipcode', 'trim|min_length[2]|max_length[10]|xss_clean');
+		$this -> form_validation -> set_rules('address', 'Address', 'required|xss_clean');
 		$this -> form_validation -> set_rules('description', 'Description', 'trim|required|min_length[10]|xss_clean|max_length[500]');
 
 		$_POST['date'] = $this -> input -> post('date_year') . '-' . $this -> input -> post('date_month') . '-' . $this -> input -> post('date_day');
 		
 		
 		if ($this->form_validation->run() == FALSE) {
-            $this->load->view('events_controlpanel_view');
-			//redirect('events');
-        } 	
+		//if ($Session -> IsValid())
+		//	if (is_object($Session -> User) && $Session -> User -> Admin)
+		$data["events"] = $this -> events_model -> getEvents();
+		$this -> load -> adminpanel('events_view', $data);
+
+		}
 		else {
 			if (isset($_FILES['picture']) && $_FILES['picture']['size'] > 0) {
 				
@@ -80,6 +76,7 @@ class Events extends MY_Controller {
 			'Title' => $this -> input -> post('title'), 
 			'Date' => $this -> input -> post('date'), 
 			'Time' => $this -> input -> post('time'), 
+			'Address' => $this -> input -> post('address'), 
 			'Description' => $this -> input -> post('description'),
 			'Picture' => $picture
 		);

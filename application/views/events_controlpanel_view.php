@@ -3,12 +3,14 @@
 	
     <div class="col-md-10 pull-left selected">
         <div class="row">
+<!--
         	<div class="row">
 		        <div class="col-xs-12">
 		             <input type="button" class="btn btn-block btn-lg" id="AddEventButton" value="Add New Event +">
 		             <br/>
 		        </div>
-		    </div>
+		    </div>-->
+
             <div class="col-md-12 pull-right" id="AddEventForm">
             	<?php echo form_open_multipart('events/addevent'); ?>
                   <h3 style="margin-bottom:25px;">New Event:</h3>  
@@ -57,7 +59,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                        	<div></div>
+                        	<div id="locationField">
+								<input id="address" name="address" class="form-control input-lg" placeholder="Enter the event address" onFocus="geolocate()" type="text"></input>
+							</div>
+							<div id="map-canvas" class="form-control" style="width:345px; height:345px;"></div>
                         </div>
                     </div>
                 </div>
