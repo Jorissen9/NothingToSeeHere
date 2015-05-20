@@ -57,6 +57,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
+                        	<div></div>
                         </div>
                     </div>
                 </div>
@@ -70,10 +71,10 @@
                 
 	            <div class="row">
 	                <div class="col-md-12 pull-left form-group">
-	                  <span class="btn btn-block btn-lg btn-file">
-    						Select picture <input type="file" id="picture" name="picture">
+	                  <span class="btn btn-block btn-file">
+    						<input type="file" id="picture" name="picture">
 						</span>
-	                   <input type="submit" class="btn btn-block btn-lg" value="Create" />
+	                   <input type="submit" class="btn btn-block btn-lg" value="Create">
 	                   <br/>
 	                </div>
 	                <?php echo form_close(); ?>
