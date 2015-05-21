@@ -5,7 +5,6 @@
 			<br/>
 			<li class="active">About TEDxPXL</li>
 			<li><a href="<?php echo base_url('about/team')?>" title="team">Our Team</a></li>
-			<li><a href="<?php echo base_url('about/alumni')?>" title="alumni members">Alumni Members</a></li>
 			<li><a href="<?php echo base_url('about/partners')?>" title="partners">Our Partners</a></li>
 		</ul>
 		<h2>About TEDxPXL</h2>

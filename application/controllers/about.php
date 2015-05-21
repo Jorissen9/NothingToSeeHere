@@ -22,11 +22,6 @@ class About extends MY_Controller {
 		$this -> load -> template('team_view');
 	}
 	
-	function alumni()
-	{
-		$this -> load -> template('alumni_view');
-	}
-	
 	function partners()
 	{
 		$this -> load -> template('partners_view');

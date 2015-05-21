@@ -32,9 +32,6 @@
 						<li class="<?php echo($this -> uri -> segment(2) == 'team') ? 'current-submenu-item' : ''; ?>">
 							<a href="<?php echo base_url('about/team')?>" title="team">Our Team</a>
 						</li>
-						<li class="<?php echo($this -> uri -> segment(2) == 'alumni') ? 'current-submenu-item' : ''; ?>">
-							<a href="<?php echo base_url('about/alumni')?>" title="alumni">Alumni Members</a>
-						</li>
 						<li class="<?php echo($this -> uri -> segment(2) == 'partners') ? 'current-submenu-item' : ''; ?>">
 							<a href="<?php echo base_url('about/partners')?>" title="partners">Our Partners</a>
 						</li>
