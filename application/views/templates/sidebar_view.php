@@ -1,17 +1,4 @@
 <div class="col-md-3 pull-right" style="margin-top:15px;">
-	<div class="col-md-10 pull-left">
-		<div class="col-md-12 panel-body pull-right" style="margin-bottom: 50px;">
-			<div class="col-md-12" style="height: 15px;"></div>
-			<form class="navbar-form col-md-12" role="search">
-				<div class="form-group">
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Search" id="inputGroup" style="width:200px;"/>
-						<span class="input-group-addon"> <i class="halflings halflings-menu-hamburger"></i> </span>
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
 	<div class="col-md-12 pull-right">
 		<div class="col-md-12 panel-body pull-right">
 			<h3 class="panel-title pull-left">Follow us on Twitter</h3>

@@ -62,13 +62,12 @@
                         	<div id="locationField">
 								<input id="address" name="address" class="form-control input-lg" placeholder="Enter the event address" onFocus="geolocate()" type="text" required></input>
 							</div>
-							<div id="map-canvas" class="form-control" style="width:345px; height:345px;"></div>
+							<div id="map-canvas" class="col-md-12 form-control" style="height:345px;"></div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                   	<div class="col-md-12">
-                  		<div class="form-group">
                         	<textarea rows="6" style="resize: vertical;" value="<?php echo set_value('Description'); ?>" type="text" name="description" id="description" class="form-control input-lg" placeholder="description" tabindex="7" required></textarea>
                     </div>
                 </div>

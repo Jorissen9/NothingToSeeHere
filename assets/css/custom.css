@@ -83,7 +83,7 @@ a.overview {
   zoom: 1;
   position: relative;
   height: 400px;
-  width:96%;
+  width:100%;
 }
 
 .btn-file {
@@ -109,6 +109,22 @@ a.overview {
 input[readonly] {
   background-color: white !important;
   cursor: text !important;
+}
+
+@media (max-width: 767px){
+	.events{
+		font-size: 12px;
+	}
+	
+	.more{
+  		bottom: 0;
+	}
+}
+
+@media (max-width: 400px){
+	.events{
+		font-size: 10px;
+	}
 }
 
 /* END EVENTS */
