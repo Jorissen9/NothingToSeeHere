@@ -26,6 +26,7 @@
 		<script type="text/javascript" src="<?php echo base_url('assets/js/Navigation/function.js')?>"></script>
 		<script type="text/javascript" src="<?php echo base_url('assets/js/Bootstrap/bootstrap.js')?>"></script>
 		<script type="text/javascript" src="<?php echo base_url('assets/js/Bootstrap/bootstrap-select.js')?>"></script>
+		<script type="text/javascript" src="<?php echo base_url('assets/js/Bootstrap/bootstrap-file-input.js')?>"></script>
 		<script type="text/javascript" src="<?php echo base_url('assets/js/Bootstrap/npm.js')?>"></script>
 		
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

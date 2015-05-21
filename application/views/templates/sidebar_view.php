@@ -1,9 +1,9 @@
-<div class="col-md-3 pull-right" style="margin-top:15px;">
+<div class="col-md-3 pull-right" style="padding-top:50px;">
 	<div class="col-md-12 pull-right">
 		<div class="col-md-12 panel-body pull-right">
 			<h3 class="panel-title pull-left">Follow us on Twitter</h3>
 			<div class="col-md-12" style="height: 15px;"></div>
-			<a class="col-md-12 twitter-timeline" href="https://twitter.com/tedx" height="310" data-widget-id="595952552681807872">Tweets door @TEDxPXL</a>
+			<a class="col-md-12 twitter-timeline" href="https://twitter.com/tedx" height="310px" width="350px" data-widget-id="595952552681807872">Tweets door @TEDxPXL</a>
 			<script>
 				! function(d, s, id) {
 					var js,
@@ -36,7 +36,7 @@
 						fjs.parentNode.insertBefore(js, fjs);
 					}(document, 'script', 'facebook-jssdk'));
 			</script>
-			<div class="fb-page" data-href="https://www.facebook.com/TEDxEvents" data-height="300" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
+			<div class="fb-page" data-href="https://www.facebook.com/TEDxEvents" data-height="310px" width="350px" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
 				<div class="fb-xfbml-parse-ignore">
 					<blockquote cite="https://www.facebook.com/TEDxEvents">
 						<a href="https://www.facebook.com/TEDxEvents">TEDxPXL</a>

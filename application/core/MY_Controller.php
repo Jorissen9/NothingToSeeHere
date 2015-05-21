@@ -4,7 +4,6 @@ class MY_Controller extends CI_Controller {
 		parent::__construct();
 
 		require_once(APPPATH.'views/templates/default.master.php');
-		//require_once(APPPATH.'views/navigation_view.php');
 		require_once(APPPATH.'libraries/gdn_framework.php');
 		
 	$Session = Gdn::Session();	

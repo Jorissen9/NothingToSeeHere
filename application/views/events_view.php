@@ -1,7 +1,7 @@
-<div class="col-md-9">
+<div class="col-md-9" style="padding-top: 30px;">
 	<div  class="col-xs-10 pull-left col-xs-offset-1 content">
 		<?php
-		var_dump($events);
+		 var_dump($events);
 		
 		$posts = '<ol class="events col-xs-12 content">';
 		foreach ($events as $row) {

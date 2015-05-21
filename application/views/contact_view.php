@@ -3,7 +3,6 @@
         <div class="col-md-9 col-md-offset-2">
             <?php $attributes = array("class" => "form-horizontal", "name" => "contactform");
             echo form_open("contact/index", $attributes);?>
-            <fieldset>
             <h2>Contact Form</h2>
             <div class="form-group">
                 <div class="col-md-12">
@@ -50,7 +49,6 @@
                     <input name="submit" type="submit" class="btn" value="Send" />
                 </div>
             </div>
-            </fieldset>
             <?php echo form_close(); ?>
             <?php echo $this->session->flashdata('msg'); ?>
         </div>
