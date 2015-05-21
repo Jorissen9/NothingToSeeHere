@@ -5331,7 +5331,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel-title {
   text-align: right;
-  margin-top: 0;
+  margin-top: 20px;
   margin-bottom: 0;
   font-size: 16px;
   color: inherit;
