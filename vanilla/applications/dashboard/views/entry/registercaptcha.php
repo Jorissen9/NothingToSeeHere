@@ -1,7 +1,7 @@
 <?php if (!defined('APPLICATION')) exit(); ?>
-<div class="FormTitleWrapper">
-<h1><?php echo T("Register") ?></h1>
-<div class="FormWrapper">
+<div class="FormTitleWrapper content">
+<h1 style="padding-bottom:20px;"><?php echo T("Register") ?></h1>
+<div class="FormWrapper content">
    <?php
    $TermsOfServiceUrl = Gdn::Config('Garden.TermsOfService', '#');
    $TermsOfServiceText = sprintf(T('I agree to the <a id="TermsOfService" class="Popup" target="terms" href="%s">terms of service</a>'), Url($TermsOfServiceUrl));
