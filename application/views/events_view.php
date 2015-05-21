@@ -13,7 +13,7 @@
 				$posts .= '<img typeof="foaf:Image" class="img-responsive" src="./assets/imgs/' . $row -> Picture . '">';
 			}
 
-			$posts .= '<h4 class="title">' . date('M', $row -> Date) . ' ' . date('d', $row -> Date) . ' at ' . date('g:i a', strtotime($row -> Time)) . ' - ' . $row -> Title . '<h4>';
+			$posts .= '<h4 class="title">' . date('M', $row -> Date) . ' ' . date('d', $row -> Date) . ' at ' . date('g:i a', strtotime($row -> Time)) . ' - ' . $row -> Title . '</h4>';
 
 			//$posts .= '<h5>What?</h5><h3>' . $row -> Description . '</h3>';
 			

@@ -5,37 +5,39 @@
 		<br/>
 		<h3 style="margin-bottom:50px;"> Latest News: </h3>
 		<?php
-
+		
+		$posts = '<ol class="events col-xs-12 container content">';
 		foreach ($fbdata -> data as $post) {
-			$posts = "";
-			$posts .= '<div class="col-xs-12 content"><div class="col-xs-7 col-xs-offset-3" style="background-color: #F5F5F5; text-align:center; border-radius: 25px;">';
+			
+			$posts .= '<li class="col-xs-7 col-xs-offset-3 container"><a class="overview landscape" target="_blank" href="'. $post -> link .'">';
+			//$posts .= '<div class="col-xs-12 content"><div class="col-xs-7 col-xs-offset-3" style="background-color: #F5F5F5; text-align:center; border-radius: 25px;">';
 			$fbTime = strtotime($post -> created_time);
 			$myTime = date("d M Y h:ia", $fbTime);
-
-			if (isset($post -> message)) {
-				$posts .= '<h5><p style="line-height:60px;">Posted on: ' . $myTime . '</h5>';
-				$posts .= '<h4><a href="' . $post -> link . '">' . $post -> message . '</a></p>';
 			
 			if (isset($post -> picture)) {
-				$posts .= '<p style="line-height:60px;"><img src="' .$post -> full_picture. '" class="center-block fbpicture img-responsive img-rounded" style="width:504px; text-align:center;" /></p>';
-				
+				//$posts .= '<p style="line-height:60px;"><img src="' .$post -> full_picture. '" class="center-block fbpicture img-responsive img-rounded" style="width:504px; text-align:center;" /></p>';
+				$posts .= '<img typeof="foaf:Image" class="img-responsive" src="' .$post -> full_picture. '">';
 			}
+
+			if (isset($post -> message)) {
+			
+				$posts .= '<h5 class="title">' . $myTime . ' - ' . $post -> message . '</h5>';
 
 				
 			if (isset($post -> description)) {		
-				$posts .= '<p>' . $post -> description . '</p>';
+				$posts .= '<h5 class="description">' . $post -> description . '</h5>';
 			}
 
 				
 			} else
 				continue;
 
-			$posts .= '</h4><br/>';
-			$posts .= '</div></div>';
+			$posts .= '</a></li>';
 			//Display the posts
-			echo $posts;
+			
 		}
-
+		$posts .= '</ol>';
+		echo $posts;
 		?>
 	</div>
 </div>
