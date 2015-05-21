@@ -20,14 +20,13 @@ ol, ul {
 }
 
 .container {
-    height:400px;
+    height:500px;
 }
 
 .container img {
 	overflow:hidden;
     display: block;
     height: 100%;
-
 }
 
 .portrait img {
@@ -81,7 +80,7 @@ a.overview {
   display: block;
   zoom: 1;
   position: relative;
-  height: 400px;
+  height: 500px;
   width:100%;
 }
 
