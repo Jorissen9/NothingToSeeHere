@@ -16,7 +16,7 @@
 			
 			if (isset($post -> picture)) {
 				//$posts .= '<p style="line-height:60px;"><img src="' .$post -> full_picture. '" class="center-block fbpicture img-responsive img-rounded" style="width:504px; text-align:center;" /></p>';
-				$posts .= '<img typeof="foaf:Image" class="img-responsive" src="' .$post -> full_picture. '">';
+				$posts .= '<img typeof="foaf:Image" src="' .$post -> full_picture. '">';
 			}
 
 			if (isset($post -> message)) {

@@ -10,7 +10,7 @@
 			
 			if ($row -> Picture != "")
 			{
-				$posts .= '<img typeof="foaf:Image" class="img-responsive" src="./assets/imgs/' . $row -> Picture . '">';
+				$posts .= '<img typeof="foaf:Image" src="./assets/imgs/' . $row -> Picture . '">';
 			}
 
 			$posts .= '<h4 class="title col-md-12">' . date('M', $row -> Date) . ' ' . date('d', $row -> Date) . ' at ' . date('g:i a', strtotime($row -> Time)) . ' - ' . $row -> Title . '</h4>';

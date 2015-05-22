@@ -120,6 +120,13 @@ input[readonly] {
   cursor: text !important;
 }
 
+@media (max-width: 900px){
+	.landscape img{
+		height: 100%;
+   		width: auto;
+	}
+}
+
 @media (max-width: 767px){
 	.events{
 		font-size: 12px;
