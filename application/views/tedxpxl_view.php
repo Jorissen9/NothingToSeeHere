@@ -1,5 +1,5 @@
-<div style="height: 100%;" class="col-md-9">
-	<div class="col-md-10 col-md-offset-1 content">
+<div class="col-md-9">
+	<div class="col-md-10 pull-left col-md-offset-1 content">
 		<ul class="breadcrumb">
 			<li class="disabled"><span style="color:red; font-weight: bold">About</span></li>
 			<br/>
@@ -9,8 +9,8 @@
 		</ul>
 		<h2>About TEDxPXL</h2>
 		<br/>
-		<p>TEDxUHasselt is an independently organized TED conference where speakers from around the world share cutting-edge ideas. During the breaks,
-			attendees connect with each other through various interactive activities.TEDxUHasselt was founded in 2011 by three Hasselt University students
+		<p>TEDxPXL is an independently organized TED conference where speakers from around the world share cutting-edge ideas. During the breaks,
+			attendees connect with each other through various interactive activities.TEDxPXL was founded in 2015 by five Hasselt University students
 			and has remained a student-driven organization ever since. Meet our team members!</p>
 			
 		<h3>About TEDx</h3>
