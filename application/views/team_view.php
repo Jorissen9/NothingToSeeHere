@@ -1,5 +1,5 @@
 <div style="height: 100%;" class="col-md-9 content">
-	<div class="col-xs-10 pull-left col-xs-offset-1">
+	<div class="col-xs-10 pull-left col-xs-offset-1 row">
 		<ul class="breadcrumb">
 			<li class="disabled">
 				<span style="color:red; font-weight: bold">About</span>

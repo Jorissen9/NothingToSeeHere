@@ -1,9 +1,9 @@
 <div class="col-md-9">
-	<div class="col-xs-10 pull-left col-xs-offset-1 content">
+	<div style="margin-left:50px;" class="col-xs-10 pull-left col-xs-offset-1 content ">
 		<br/>
 		<h2>Welcome to TEDxPXL !</h2>
 		<br/>
-		<h3 style="margin-bottom:50px;"> Latest News: </h3>
+		<h3 style="margin-bottom:20px;"> Latest News: </h3>
 		<?php
 		
 		$posts = '<ol class="events col-xs-12 content">';
