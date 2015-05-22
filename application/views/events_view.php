@@ -6,7 +6,7 @@
 		$posts = '<ol class="events col-xs-12 content">';
 		foreach ($events as $row) {
 				
-			$posts .= '<li class="col-xs-12" ><a class="overview portrait" href="#">';
+			$posts .= '<li class="col-xs-12 container" ><a class="overview landscape" href="#">';
 			
 			if ($row -> Picture != "")
 			{
