@@ -1,5 +1,5 @@
-<div class="col-md-9" >
-	<div style="padding-top: 30px; padding-left:50px;" class="col-xs-10 pull-left col-xs-offset-1 content">
+<div style="margin-top: 30px;" class="col-md-9" >
+	<div  class="col-xs-10 col-xs-offset-1 content">
 		<?php
 		// var_dump($events);
 		
