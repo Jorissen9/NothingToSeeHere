@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-	<footer>
-		<div class="col-lg-12">
-		<div class="row">
+		<div class="col-lg-12 navbar navbar-default footer">
 			<div class="col-lg-2">
                 <h6>Copyright &copy; <?php echo date('Y'); ?> <?php echo 'TEDxPXL'?></h6>
 			</div>
@@ -38,6 +36,4 @@
 				<h6>Created by TEDxPXL Team Members</h6>
 			</div>
 		</div>
-		</div>
-	</footer>
 </html>
