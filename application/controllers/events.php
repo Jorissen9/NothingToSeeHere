@@ -19,13 +19,15 @@ class Events extends MY_Controller {
 		// Declare an alias for the user session.
 		// Check if the user session is valid and Admin.
 
-		if ($Session -> IsValid())
+		if ($Session -> IsValid() && is_object($Session -> User ) && $Session -> User -> Admin)
 		{
-			if (is_object($Session -> User) && $Session -> User -> Admin)
 			$this -> load -> adminpanel('events_view', $data);
 		}
+		else
+		{
+			$this -> load -> template('events_view', $data);	
+		}
 		
-		$this -> load -> template('events_view', $data);
 
 
 
