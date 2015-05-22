@@ -1,4 +1,4 @@
-<div class="col-md-9">
+<div style="height: 100%;" class="col-md-9">
 	<div class="col-md-10 pull-left col-md-offset-1 content">
 		<ul class="breadcrumb">
 			<li class="disabled"><span style="color:red; font-weight: bold">About</span></li>

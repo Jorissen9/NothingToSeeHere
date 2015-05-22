@@ -1,6 +1,6 @@
-<div style="padding-top: 50px" class="col-xs-9">
-    <div class="col-md-12 content">
-        <div class="col-md-9 col-md-offset-2">
+<div style="height:100%; padding-top:50px;" class="col-xs-9">
+    <div class="col-md-10 content">
+        <div class="col-md-7 col-md-offset-5">
             <?php $attributes = array("class" => "form-horizontal", "name" => "contactform");
             echo form_open("contact/index", $attributes);?>
             <h2>Contact Form</h2>
@@ -16,10 +16,10 @@
 
             <div class="form-group">
                 <div class="col-md-12">
-                    <label for="email" class="control-label">Email ID</label>
+                    <label for="email" class="control-label">Email Address</label>
                 </div>
                 <div class="col-md-12">
-                    <input class="form-control" name="email" placeholder="Your Email ID" type="text" value="<?php echo set_value('email'); ?>" />
+                    <input class="form-control" name="email" placeholder="Your Email Address" type="text" value="<?php echo set_value('email'); ?>" />
                     <span class="text-danger"><?php echo form_error('email'); ?></span>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                     <label for="message" class="control-label">Message</label>
                 </div>
                 <div class="col-md-12">
-                    <textarea class="form-control" name="message" rows="4" placeholder="Your Message"><?php echo set_value('message'); ?></textarea>
+                    <textarea class="form-control" name="message" rows="10" placeholder="Your Message"><?php echo set_value('message'); ?></textarea>
                     <span class="text-danger"><?php echo form_error('message'); ?></span>
                 </div>
             </div>

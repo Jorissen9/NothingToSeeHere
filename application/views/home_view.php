@@ -1,5 +1,5 @@
-<div class="col-md-9">
-	<div  class="col-xs-10 pull-left col-xs-offset-1 content">
+<div class="col-md-9 content">
+	<div class="col-xs-10 pull-left col-xs-offset-1">
 		<br/>
 		<h2>Welcome to TEDxPXL !</h2>
 		<br/>
