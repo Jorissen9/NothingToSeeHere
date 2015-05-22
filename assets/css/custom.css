@@ -120,6 +120,7 @@ input[readonly] {
   cursor: text !important;
 }
 
+@media (max-width: 1024px){
 	.landscape img{
 		height: 100%;
    		width: auto;
